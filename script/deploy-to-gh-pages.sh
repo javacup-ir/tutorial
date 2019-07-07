@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # config
-git config --global user.email "someone@travis.org"
-git config --global user.name "Travis CI"
+git config --global user.email "mjh385@gmail.com"
+git config --global user.name "mjh385"
 
 # deploy
 cd ./public
