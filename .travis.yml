@@ -18,4 +18,4 @@ deploy: # Deploy documentation to Github in the gh_pages branch
     github_token: $github_token
     local_dir: site
     on:
-        branch: gh-pages
+        branch: master
