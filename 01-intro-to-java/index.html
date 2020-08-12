@@ -1,0 +1,2076 @@
+
+
+
+<!doctype html>
+<html lang="fa" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+    
+    
+      
+        <title>01- آشنایی با جاوا - جاوا</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.63b94e9e.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="rtl">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01-" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="جاوا" class="md-header-nav__button md-logo" aria-label="جاوا">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            جاوا
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              01- آشنایی با جاوا
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="جاوا" class="md-nav__button md-logo" aria-label="جاوا">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    جاوا
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="معرفی" class="md-nav__link">
+      معرفی
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        01- آشنایی با جاوا
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="01- آشنایی با جاوا" class="md-nav__link md-nav__link--active">
+      01- آشنایی با جاوا
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    درباره جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    تاریخچه
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    انگیزه طراحی زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    امروز و جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    جاوا و زبان های سطح بالا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ماشین مجازی جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    اصطلاحات
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    برخی ویژگی های زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    چرا فن آوری جاوا مهم است؟
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ویراست های فن آوری جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    داستان زندگی جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    تاریخچه نسخه های جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    محبوبیت زبان های برنامه نویسی
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    اولین برنامه به زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    اولین برنامه
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    گام‌های لازم برای اجرای یک برنامه جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    کویز
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    جمع بندی
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    جست و جو کنید و بخوانید
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    تمرین
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../02-initial-concepts/" title="02- مفاهیم اولیه زبان جاوا" class="md-nav__link">
+      02- مفاهیم اولیه زبان جاوا
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      03 string array
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="03 string array" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        03 string array
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part1/" title="رشته، آرایه و چند داستان دیگر" class="md-nav__link">
+      رشته، آرایه و چند داستان دیگر
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part10/" title="سایر ساختارهای کنترل جریان برنامه" class="md-nav__link">
+      سایر ساختارهای کنترل جریان برنامه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part11/" title="دستور Break" class="md-nav__link">
+      دستور Break
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part12/" title="دستور Continue" class="md-nav__link">
+      دستور Continue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part13/" title="حلقه های تودرتو" class="md-nav__link">
+      حلقه های تودرتو
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part14/" title="نکته روز" class="md-nav__link">
+      نکته روز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part15/" title="توضیحات (Comments)" class="md-nav__link">
+      توضیحات (Comments)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part16/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part17/" title="رشته (String)" class="md-nav__link">
+      رشته (String)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part18/" title="سلسله مراتب داده ها" class="md-nav__link">
+      سلسله مراتب داده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part19/" title="جاوا و یونیکد" class="md-nav__link">
+      جاوا و یونیکد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part2/" title="برنامه های کنسول" class="md-nav__link">
+      برنامه های کنسول
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part20/" title="کاراکترهای ویژه در جاوا" class="md-nav__link">
+      کاراکترهای ویژه در جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part21/" title="آرایه" class="md-nav__link">
+      آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part22/" title="نحوه ی ایجاد آرایه" class="md-nav__link">
+      نحوه ی ایجاد آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part23/" title="راه کوتاه ایجاد آرایه" class="md-nav__link">
+      راه کوتاه ایجاد آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part24/" title="آرایه های چند بعدی" class="md-nav__link">
+      آرایه های چند بعدی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part25/" title="آرایه های چند بعدی نامتوازن" class="md-nav__link">
+      آرایه های چند بعدی نامتوازن
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part26/" title="ارسال آرایه به متد (Parameter Passing)" class="md-nav__link">
+      ارسال آرایه به متد (Parameter Passing)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part27/" title="پارامترهای آرایه چند بعدی" class="md-nav__link">
+      پارامترهای آرایه چند بعدی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part28/" title="پیمایش روی آرایه" class="md-nav__link">
+      پیمایش روی آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part29/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part3/" title="دریافت مقدار از ورودی" class="md-nav__link">
+      دریافت مقدار از ورودی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part30/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part31/" title="تمرین (آرایه)" class="md-nav__link">
+      تمرین (آرایه)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part32/" title="تمرین (رشته)" class="md-nav__link">
+      تمرین (رشته)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part33/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part34/" title="مطالعه تکمیلی" class="md-nav__link">
+      مطالعه تکمیلی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part4/" title="تبدیل و کنترل نوع" class="md-nav__link">
+      تبدیل و کنترل نوع
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part5/" title="تبدیل مستقیم انواع داده" class="md-nav__link">
+      تبدیل مستقیم انواع داده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part6/" title="جدول تبدیل انواع داده" class="md-nav__link">
+      جدول تبدیل انواع داده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part7/" title="چند نکته درباره اعداد اعشاری" class="md-nav__link">
+      چند نکته درباره اعداد اعشاری
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part8/" title="انتساب های عدد" class="md-nav__link">
+      انتساب های عدد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part9/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      04 intro to OOP
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="04 intro to OOP" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        04 intro to OOP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part1/" title="برنامه نویسی شی گرا (OOP)" class="md-nav__link">
+      برنامه نویسی شی گرا (OOP)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part10/" title="تعریف اولین کلاس" class="md-nav__link">
+      تعریف اولین کلاس
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part11/" title="مثال اول: مستطیل" class="md-nav__link">
+      مثال اول: مستطیل
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part12/" title="چگونه از کلاس مستطیل استفاده کنیم؟" class="md-nav__link">
+      چگونه از کلاس مستطیل استفاده کنیم؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part13/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part14/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part15/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part16/" title="تمرین" class="md-nav__link">
+      تمرین
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part17/" title="جستجو کنید و بخوانید" class="md-nav__link">
+      جستجو کنید و بخوانید
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part2/" title="فضای مساله و فضای راه حل" class="md-nav__link">
+      فضای مساله و فضای راه حل
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part3/" title="رویکرد شیءگرا" class="md-nav__link">
+      رویکرد شیءگرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part4/" title="شی گرایی در برابر رویکرد رویه ای" class="md-nav__link">
+      شی گرایی در برابر رویکرد رویه ای
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part5/" title="مشخصات برنامه نویسی شی گرا" class="md-nav__link">
+      مشخصات برنامه نویسی شی گرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part6/" title="مفاهیم برنامه نویسی شی گرا" class="md-nav__link">
+      مفاهیم برنامه نویسی شی گرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part7/" title="کنترل دسترسی" class="md-nav__link">
+      کنترل دسترسی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part8/" title="محصورسازی" class="md-nav__link">
+      محصورسازی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part9/" title="واسط" class="md-nav__link">
+      واسط
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      05 objects in java
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="05 objects in java" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        05 objects in java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part1/" title="سرفصل مطالب" class="md-nav__link">
+      سرفصل مطالب
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part10/" title="آرایه و ارجاعات" class="md-nav__link">
+      آرایه و ارجاعات
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part11/" title="رشته در جاوا" class="md-nav__link">
+      رشته در جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part12/" title="نیم نگاهی به کلاس String" class="md-nav__link">
+      نیم نگاهی به کلاس String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part13/" title="مثال" class="md-nav__link">
+      مثال
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part14/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part15/" title="زباله روب (Garbage Collector)" class="md-nav__link">
+      زباله روب (Garbage Collector)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part16/" title="فراخوانی متد" class="md-nav__link">
+      فراخوانی متد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part17/" title="پارمترها چگونه به متدها پاس می شوند؟" class="md-nav__link">
+      پارمترها چگونه به متدها پاس می شوند؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part18/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part19/" title="بخش های مختلف آرایه" class="md-nav__link">
+      بخش های مختلف آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part2/" title="اشیاء در برنامه های جاوا" class="md-nav__link">
+      اشیاء در برنامه های جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part20/" title="تنظیم اندازه Stack وHeap برای یک برنامه" class="md-nav__link">
+      تنظیم اندازه Stack وHeap برای یک برنامه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part21/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part22/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part23/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part24/" title="تمرین" class="md-nav__link">
+      تمرین
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part25/" title="جستجو کنید و بخوانید" class="md-nav__link">
+      جستجو کنید و بخوانید
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part3/" title="اشیاء در حافظه" class="md-nav__link">
+      اشیاء در حافظه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part4/" title="عملگر new" class="md-nav__link">
+      عملگر new
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part5/" title="انواع داده ها" class="md-nav__link">
+      انواع داده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part6/" title="تفاوت یک متغیر اولیه با یک شی" class="md-nav__link">
+      تفاوت یک متغیر اولیه با یک شی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part7/" title="مفهوم ارجاع (Reference)" class="md-nav__link">
+      مفهوم ارجاع (Reference)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part8/" title="ساخت اشیاء" class="md-nav__link">
+      ساخت اشیاء
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part9/" title="آرایه ها در جاوا" class="md-nav__link">
+      آرایه ها در جاوا
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      06 birth and death objects
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="06 birth and death objects" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        06 birth and death objects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part1/" title="تولد و مرگ اشیاء (Object Initialization & Clean up)" class="md-nav__link">
+      تولد و مرگ اشیاء (Object Initialization & Clean up)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part10/" title="سایر روش های مقدار دهی اولیه" class="md-nav__link">
+      سایر روش های مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part11/" title="ترتیب مقدار دهی اولیه" class="md-nav__link">
+      ترتیب مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part12/" title="کاربرد this برای سازنده ها" class="md-nav__link">
+      کاربرد this برای سازنده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part13/" title="خلاصه مقدار دهی اولیه" class="md-nav__link">
+      خلاصه مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part14/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part15/" title="فرآیند مرگ اشیاء" class="md-nav__link">
+      فرآیند مرگ اشیاء
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part2/" title="آماده سازی اولیه اشیاء (Initialization)" class="md-nav__link">
+      آماده سازی اولیه اشیاء (Initialization)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part3/" title="اشکال راهکار استفاده از متد init چیست؟" class="md-nav__link">
+      اشکال راهکار استفاده از متد init چیست؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part4/" title="سازنده (constructor)" class="md-nav__link">
+      سازنده (constructor)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part5/" title="نحوه ی کار سازنده (Constructor)" class="md-nav__link">
+      نحوه ی کار سازنده (Constructor)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part6/" title="سازنده هایی با پارامترهای مختلف" class="md-nav__link">
+      سازنده هایی با پارامترهای مختلف
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part7/" title="وظیفه‌ی سازنده" class="md-nav__link">
+      وظیفه‌ی سازنده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part8/" title="مقادیر پیش فرض" class="md-nav__link">
+      مقادیر پیش فرض
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part9/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    درباره جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    تاریخچه
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    انگیزه طراحی زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    امروز و جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    جاوا و زبان های سطح بالا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ماشین مجازی جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    اصطلاحات
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    برخی ویژگی های زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    چرا فن آوری جاوا مهم است؟
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ویراست های فن آوری جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    داستان زندگی جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    تاریخچه نسخه های جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    محبوبیت زبان های برنامه نویسی
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    اولین برنامه به زبان جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    اولین برنامه
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    گام‌های لازم برای اجرای یک برنامه جاوا
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    کویز
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    جمع بندی
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    جست و جو کنید و بخوانید
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    تمرین
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="01-">01- آشنایی با جاوا</h1>
+<p><img alt="آشنایی با مبانی جاوا" src="../images/chapter1/2019-07-09-11-42-50.png" /></p>
+<p>در این فصل با زبان جاوا، تاریخچه، ویژگی ‎ها و جایگاه آن آشنا خواهیم شد، و در مورد اینکه چرا جاوا زبان مهمی هست صحبت خواهیم کرد. در آخر با نحوه‎ی نصب و راه‎اندازی جاوا برای برنامه‎نویسی آشنا خواهیم شد و اولین برنامهٔ خود به زبان جاوا را می‌نویسیم و کامپایل و اجرا می کنیم.</p>
+<h2 id="_1">درباره جاوا</h2>
+<p>جاوا یک زبان و در واقع یک فن آوری برنامه نویسی است. یکی از پرکاربردترین زبان‎های برنامه نویسی دنیا و ایران در حال حاضر است. استفاده از زبان جاوا برای همگان رایگان است و متن پیاده سازی این زبان نیز به صورت آزاد در اختیار عموم است (اصطلاحا این زبان متن باز یا open source است). برنامه هایی که به این زبان نوشته می شوند روی انواع سیستم های مختلف مستقل از سخت افزار و سیستم عامل آنها قابل اجرا هستند. و در نهایت جاوا زبانی ساده و شی گرا (object oriented) است.</p>
+<h2 id="_2">تاریخچه</h2>
+<p><img alt="تاریخچه جاوا" src="../images/chapter1/2019-07-09-16-14-31.png" /></p>
+<p>طراحی اولیه این زبان در سال 1991 توسط James Gosling در شرکت Sun Microsystem انجام شد. ساختار و گرامر زبان جاوا بسیار شبیه زبان C و ++C است. در ابتدا این زبان Oak (بلوط) نامگذاری شد، به افتخار درخت بلوطی که کنار پنجره اتاق آقای گاسلین روییده بود. اما کمی بعد به علت وجود زبان دیگری که قبلا به این نام ثبت شده بود، این زبان این بار با الهام از فنجان قهوه ی جاوایی که روی میز کار آقای گاسلین قرار داشت، جاوا نام گرفت. همین طور که می بینید طراحان این زبان حتی در نام گذاری هم سخت گیری نکرده اند و سعی کرده اند این سادگی در تمامی این زبان چه برای برنامه نویسان و چه برای کسانی که کدها جاوا را میخوانند رعایت کنند. شرکت سان اولین نسخه جاوا را در 1995 منتشر کرد، در سال 2010 شرکت سان توسط شرکت Oracle خریده شد و در حال حاضر این شرکت مالک معنوی جاواست و انتشار نسخه های جاوا توسط اوراکل انجام می شود.</p>
+<h2 id="_3">انگیزه طراحی زبان جاوا</h2>
+<p><img alt="انگیزه طراحی زبان جاوا" src="../images/chapter1/2019-07-09-16-15-07.png" /></p>
+<p>انگیزه و طرح اولیه در ذهن طراحان جاوا طراحی زبانی مستقل از سکو (platform independent) بود، یعنی زبانی که مستقل از سخت افزار و سیستم عامل و سایر عوامل محیطی بتواند کار کند و برنامه هایی که به این زبان نوشته می شوند مستقل از این عوامل اجرا شوند. هدف این بود که این زبان در وسایل مختلف الکتریکی مورد استفاده قرار بگیرد و ما بتوانیم برنامه هایی بنویسیم که در وسایلی مثل یخچال یا جاروبرقی، خودروها و یا خیلی وسایل دیگر قابل جاسازی کردن و استفاده باشد، به طور کلی رویکر آن سال ها برنامه نویسی در راستای ایجاد وسایل هوشمند بود.
+از طرف دیگر در همان سال ها اینترنت و وب هم در حال رشد و فراگیر شدن بودند و جاوا می توانست برای برنامه نویسی اینترنت هم مورد استفاده قرار بگیرد چرا که اینترنت مجموعه ای سیستم های مختلف (از نظر سخت و نرم افزاری) است و برنامه های جاوا به علت مستقل از سکو بودند برای این منظور مناسب بودند. برای این کاربرد java Applet ها ایجاد شدند و اهمیت پیدا کردند، جاوا اپلت ها برنامه هایی به زبان جاوا با قابلیت استفاده در فضای مجازی بودند.</p>
+<h2 id="_4">امروز و جاوا</h2>
+<p><img alt="امروز و جاوا" src="../images/chapter1/2019-07-09-16-15-34.png" /></p>
+<p>اما امروز شرایط تا حدودی تغییر کرده است.</p>
+<ul>
+<li>
+<p>نسخه ی سازمانی جاوا (Java Enterprise Edition) در سمت سرور بسیار پر استفاده است، و از آن برای کاربردهای خدمات اینترنت و وب کمک گرفته می شود.</p>
+</li>
+<li>
+<p>در قسمت تلفن های همراه جاوا در قالب سیستم عامل اندروید حضور یافته.</p>
+</li>
+<li>
+<p>و در دستگاه های الکترونیکی به صورت Java Micro Edition استفاده می شود.</p>
+</li>
+<li>
+<p>در کارت های هوشمند نیز به صورت Java Card مورد استفاده قرار می گیرد. در واقع نسخه های مختلف جاوا در کاربردهای مختلف بسیار مورد توجه و استفاده قرار گرفته اند. در واقع جاوا امروزه مهم تر از یک زبان برنامه نویسی و می توان گفت یک فن آوری برنامه نویسی است. یک اکوسیستم تولید نرم افزار است. این تکنولوژی شامل دو بخش مهم است: زبان برنامه نویسی و محیط توسعه.</p>
+</li>
+<li>
+<p>زبان برنامه نویسی که برای تولید انواع برنامه ها در کاربردهای مختلف مورد استفاده قرار می گیرد.</p>
+</li>
+<li>
+<p>و محیط توسعه شامل کامپایلر (javac)، اجرا کننده (java)، مولد مستندات (Javadoc) و بسیاری امکانات توسعه دیگر که در کنار هم فن آوری جاوا را تکمیل می کنند.</p>
+</li>
+</ul>
+<p>همچنین این اکوسیستم شامل شرکت های مختلف و نرم افزارهای بسیار متن باز و متنوعی هست که این فضا رو برای تولید نرم افزار، بهتر و  پیشرفته تر می کنند.</p>
+<h2 id="_5">جاوا و زبان های سطح بالا</h2>
+<p><img alt="جاوا و زبان های سطح بالا" src="../images/chapter1/2019-07-09-16-16-30.png" /></p>
+<p>بسیاری از زبان های برنامه نویسی که می شناسیم زبان هایی سطح بالا هستند، زبان های سطح بالا، زبان هایی هستند که از سطح زبان ماشین انتزاعی تر و به سطح تفکر انسان نزدیک تر هستند، همان طور که در شکل می بینید، زبان ماشین، شامل صفر و یک هایی هست که سخت افزار آنها را می فهمد، زبان اسمبلی که بر مبنای زبان ماشین نوشته شده است با استفاده از برچسب هایی برنامه نویسی را برای انسان ساده تر کرده است، اما بسیاری از زبان هایی که ما می شناسیم از این هم انتزاعی تر و به زبان انسان نزدیک تر هستند، مانند C،  Fortran، Pascal و زبان هایی از این دست، از این منظر زبان جاوا هم یک زبان سطح بالاست.</p>
+<h2 id="_6">ماشین مجازی جاوا</h2>
+<p>در اجرای برنامه های جاوا یک مولفه خاص به نام Java Virtual Machine یا همان ماشین مجازی جاوا وجود دارد که در واقع برنامه های جاوا با کمک این مولفه اجرا می شوند، همان طور که می دانید مهم ترین لایه ی نرم افزاری که روی سخت افزار اجرا می شود سیستم عامل است، مانند ویندوز، لینوکس، مک یا هر سیستم عامل دیگری که روی سخت افزار اجرا می شوند و برنامه های ما را اجرا می کنند. در واقع برنامه های ما معمولا روی سیستم عامل اجرا می شوند، اما برنامه های جاوا دارای یک لایه ی واسط به نام JVM (مخفف ماشین مجازی جاوا)  هستند که این واسط روی سیستم عامل و برنامه های جاوا توسط JVM اجرا می شوند.
+اگر ما بخواهیم یک برنامه جاوا را اجرا کنیم، بایست مراحلی مانند زیر را برای کامپایل و اجرا کردن آن طی کنیم. ابتدا برنامه ای به زبان جاوا با پسوند .java نوشته می شود، سپس با کمک کامپایلر جاوا (javac) این برنامه کامپایل و به زبان میانی به نام بایت کد ترجمه می شود، فایل هایی که حاوی بایت کد هستند پسوند .class دارند. این بایت کد ها رو سیستم عامل ها مختلف قابل اجرا هستند. مثلا ما روی یک سیستم با سیستم عامل ویندوز می توانیم یک jvm نصب کنیم و این ماشین مجازی می داند که برنامه ها به زبان میانی (بایت کدها) را چگونه بر روی سیستم عامل ویندوز اجرا نماید، به همین صورت برای سیستم عامل های مختلف jvm های مختلف وجود دارد.</p>
+<p><img alt="ماشین مجازی جاوا" src="../images/chapter1/2019-07-09-16-16-58.png" /></p>
+<p>به این دقت کنید که این لایه میانی در زبان هایی مانند C و ++C وجود ندارند و برنامه ای که به این زبان ها نوشته می شود مستقیما بر روی سیستم عامل اجرا می شوند و لایه میانی مانند jvm در این زبان ها وجود ندارد. همچنین در برخی زبان ها مانند خانواده ی .Net Framework مانند C# نیز این لایه میانی وجود دارد و دات نت فریم ورک نقش jvm را برای آنها ایفا می کند و آنجا هم برنامه ها به زبان میانی ترجمه می شوند و زبان میانی توسط دات نت فریم ورک اجرا می شود اما تنوعی که در جاوا وجود دارد برای سیستم هایی که می تواند روی آنها اجرا شود در این زبان ها (خانواده ی دات نت) وجود ندارد و تاکیدی که بر مستقل از سکو بودن در جاوا هست در خانواده دات نت بسیار کم وجود دارد چرا که دات نت مربوط به شرکت مایکروسافت است و این شرکت سیستم عامل ویندوز را ترجیح داده است.
+اگر بخواهیم وضعیت اجرا شدن زبان‎های مختلف روی سیستم عامل ها و نهایتا سخت افزار را بررسی کنیم به نتایج زیر خواهیم رسید، همان طور که در شکل می بینید برنامه هایی به زبان پاسکال و یا ++C پس از کامپایل شدن مستقیما به فایل قابل اجرا برای سیستم عامل تبدیل و روی سیستم عامل اجرا می شوند، در حالی که برنامه های نوشته شده توسط زبان های خانواده دات نت و برنامه های جاوایی به زبان میانی ترجمه و سپس توسط ماشین مجازی (jvm برای جاوا و .Net framework برای C# و VB.NET) روی سیستم عامل اجرا می شوند.</p>
+<p><img alt="ماشین مجازی جاوا" src="../images/chapter1/2019-07-09-16-17-50.png" /></p>
+<h2 id="_7">اصطلاحات</h2>
+<p>در این قسمت به بررسی برخی اصطلاحات که در مورد مستقل از سکو بودن زبان جاوا به کار می روند خواهیم پرداخت. این اصطلاحات به شرح زیر هستند:</p>
+<ul>
+<li>Platform independence</li>
+<li>Cross-Platform</li>
+<li>Portable</li>
+<li>Architecture Neutral</li>
+<li>Write Once Run Anywhere
+تمامی این اصطلاحات حاوی این معنی هستند که برنامه های جاوا را می توان بدون هیچ تغییری در سیستم های مختلف اجرا نمود (برنامه هایی قابل حمل هستند) و نتیجه ی اجرای برنامه روی این محیط های مختلف یکسان خواهد بود.</li>
+</ul>
+<h2 id="_8">برخی ویژگی های زبان جاوا</h2>
+<ul>
+<li>سادگی: از ابتدا تلاش طراحان جاوا بر این بوده است که این زبان تا حد ممکن ساده باشد و ساختارهای پیچیده ای نداشته باشد.</li>
+<li>شی گرایی: جاوا زبانی مبتنی بر اشیا است یعنی شهروند و موجودیت درجه اول در این زبان اشیاء هستند.</li>
+<li>مستقل از سکو: همان طور که در قسمت های قبل اشاره شد، برنامه های جاوا قابل اجرا و حمل بر روی سیستم های مختلف با سخت افزارها و سیستم عامل های مختلف هستند.</li>
+<li>امنیت: جاوا زبانی امن است به این معنا که دارای امکاناتی برای جلوگیری از بسیار از مشکلات امنیتی می باشد.</li>
+<li>اجرا به صورت تفسیری (interpreted): یعنی هر برنامه به زبان جاوا در ابتدا به بایت کد ترجمه (کامپایل) شده و سپس این کد میانی خط به خط ترجمه (تفسیر) می شود.</li>
+<li>چند نخی (multithreaded): این امکان در جاوا وجود دارد که برنامه ها به صورت چند نخی نوشته و به صورت موازی و یا هم روند اجرا شوند.
+البته در مورد این ویژگی ها نکاتی هم مطرح است مثلا اینکه آیا با توجه به تغییراتی که جاوا در طی این حدود 20 سال داشته و ویژگی ها و امکاناتی که به آن اضافه شده است، آیا هنوز زبانی ساده به حساب می آید؟
+یا اینکه جاوا زبانی شی گراست اما در نسخه های جدید (جاوا 8 به بعد) از امکانات تابعی (Functional) هم پشتیبانی می کند، اما با این وجود هنوز هم این زبان به عنوان یک زبان شی گرا توصیف می شود.</li>
+</ul>
+<h2 id="_9">چرا فن آوری جاوا مهم است؟</h2>
+<p><img alt="چرا فن آوری جاوا مهم است؟" src="../images/chapter1/2019-07-09-16-18-26.png" /></p>
+<p>ویژگی های مختلفی در این فن آوری وجود دارد که موجب اهمیت آن می شود:</p>
+<ul>
+<li>اولین علت این است که یادگیری جاوا ساده است.</li>
+<li>همچنین زبانی شی گرا و مناسب برای کاربردهای امروزی است.</li>
+<li>این زبان دارای API ها و کلاس های کمکی بسیار غنی است، این امکانات در حوزه های مختلفی مانند کار با ساختمان داده های مختلف، کار با فایل، کاربردهای شبکه، پایگاه داده و بسیاری امکانات متنوع دیگر است.</li>
+<li>و ابزارهای توسعه بسیار قوی در اطراف این زبان ایجاد شده اند که برنامه نویسی با کمک جاوا را بسیار ساده می کنند، ابزارهایی مانند محیط های توسعه (Eclipse, NetBeans, Intellij Idea ) و سایر ابزارهایی که توسعه را آسان تر می کنند (مانند Ant و Maven)، این ابزارها اگرچه جزو زبان جاوا نیستند، اما کسانی آنها را به صورت رایگان و متن باز در اختیار ما قرار داده اند.</li>
+<li>جاوا دارای کتابخانه های متن باز بسیار غنی است، این کتابخانه ها که توسط شرکت هایی مانند Apache، google،  SourceForge فراهم شده اند و ما می توانیم از آنها استفاده نماییم.</li>
+<li>جاوا انجمنی بسیار قوی دارد (Java Community) که برنامه نویسان و فعالان این حوزه در آن به تبادل اطلاعات می پردازند. این انجمن اعضای بسیار در دنیا و در ایران دارد و این یکی از نقاط قوت این زبان محسوب می شود، برای پی بردن به این ویژگی کافیست یک سوال جاوایی را در سایتی مانند StackOverflow جست و جو کنید.</li>
+<li>جاوا رایگان و متن باز است و این دو ویژگی برای یک زبان برنامه نویسی بسیار مهم است.</li>
+<li>مستندات بسیار خوبی در زمینه این زبان وجود دارد (بسیاری از آنها توسط Javadoc تولید شده اند که در بخش های بعد در مورد آن صحبت خواهیم کرد.</li>
+<li>جاوا مستقل از سکو است.</li>
+<li>این زبان زبانی بالغ است و در فراز و فرودهای بیش از دو دهه به خوبی دوام آورده، و زبان جدیدی نیست که تغییرات کسب و کار بتواند به راحتی آن را زمین بزند.</li>
+<li>سهم مهمی از بازار تولید نرم افزار در اختیار جاواست. برنامه های سمت سرور، برنامه های موبایل و غیره می‌توانند با جاوا توسعه یابند.</li>
+<li>جاوا هم در محیط های دانشگاهی و هم در پروژه های صنعتی محبوب است.</li>
+<li>همچنین JVM در حال حاضر به زبان های مهمی مانند Groovy و Scala نیز سرویس می دهد و حتی اگر از زبان جاوا استفاده نکنید، می توانید از امکانات ماشین مجازی جاوا برای توسعه برنامه هایی به این زبان ها بهره ببرید. و این مجموعه از زبان ها (زبان هایی که از JVM برای اجرا شدن استفاده می کنند) رو به گسترش هستند.</li>
+</ul>
+<p><img alt="چرا فن آوری جاوا مهم است؟" src="../images/chapter1/2019-07-09-16-18-56.png" /></p>
+<h2 id="_10">ویراست های فن آوری جاوا</h2>
+<p><img alt="ویراست های فن آوری جاوا" src="../images/chapter1/2019-07-09-16-19-13.png" /></p>
+<p>زبان جاوا دارای ویراست(edition) های مختلفی است:</p>
+<ul>
+<li>Java Standard Edition: نسخه ی اصلی جاوا است</li>
+<li>Java Enterprise Edition: نسخه ی سازمانی این زبان است که برای نوشتن برنامه های بسیار بزرگ که احتمالا کاربران زیادی هم دارد و در بستر وب ارائه می شوند مورد استفاده قرار می گیرد.</li>
+<li>Java Micro Edition: این ویراست که JME هم گفته می شود برای سخت افزارهای بسیار محدود و کوچک با منابع کم مورد استفاده قرار می گیرد مانند گیرنده های دیجیتال، تلوزیون ها، وسایل الکترونیکی و مواردی مانند اینها</li>
+<li>و Java Card که برای کارت های هوشمند مورد استفاده قرار می گیرد.
+زبان جاوا در Java Standar Edition طراحی و توصیف شده است و ما در این کتاب قصد بررسی همین ویراست را داریم و البته زبانی که در JEE (Java Enterprise Edition) مورد استفاده قرار می گیرد هم همین ویراست است. در واقع زبانی که در ویراست سازمانی مورد استفاده قرار می گیرد هم همین زبان است و تنها در نسخه های JME و Java Card این زبان قدری محدود تر شده است.</li>
+</ul>
+<h2 id="_11">داستان زندگی جاوا</h2>
+<p><img alt="داستان زندگی جاوا" src="../images/chapter1/2019-07-09-16-19-43.png" /></p>
+<p>واقعیت این است که جاوا زندگی پر فراز و نشیبی را پشت سر گذاشته است، این زبان با امید استفاده در وسایل الکترونیکی مختلف طراحی شد، و با فراگیر شدن اینترنت با اپلت ها معروف و پر استفاده شد، مدتی بعد با رونق پیدا کردن تلفن همراه، JME روی کار آمد و برای مدتی پیشرفته ترین زبان برنامه نویسی روی تلفن های همراه به حساب می آمد.
+این وضعیت امروزه خیلی تغییر کرده است، applet ها تقریبا بی اهمیت شده اند و سهم JME از بازار موبایل تقریبا ناچیز است، اما جاوا همچنان بسیار مهم است و نقش های مختلف دیگری را ایفا می کند، در بخش برنامه نویسی وب، و برنامه نویسی سمت سرور جاوا مهم بوده و هست، و در مورد تلفن های همراه نیز، جاوا با اندروید موفق شد مجددا سهم خودش از بازار موبایل را به دست آورد.</p>
+<h2 id="_12">تاریخچه نسخه های جاوا</h2>
+<p>همان طور که در بخش های قبل هم اشاره کردیم نسخه های اول جاوا در سال 1995 توسط سان مایکرو سیستم ارائه شد، این نسخه ها، نسخه هایی آزمایشی بودند، نسخه اول این زبان در سال 1996 ارائه شد و بعد از آن تا سال 2014 نسخه های مختلفی از این زبان به مرور منتشر شدند، در این میان نسخه هایی که تغییرات مهم و زیادی داشته اند از اهمیت و شهرت بیشتری برخوردار هستند، نسخه ی دوم جاوا در سال 1998 ارائه شد که علی رغم اینکه نسخه ی 1.2 جاوا بود، به علت اهمیت به نسخه ی 2 جاوا معروف شد، به این نسخه J2SE نیز گفته می شود و بعد از این نسخه این اسم روی زبان جاوا باقی ماند و در نسخه های 1.3 و 1.4 هم به جاوا J2SE گفته می شد، در نسخه ی 1.5 (سال 2004) که بعد ها نسخه ی 5 نام گرفت عدد 2 از نام نسخه حذف شد و دیگر به جاوا J2SE گفته نمی شد و به آن Java SE مخفف نسخه ی استاندار جاوا گفته می شد، قابل ذکر است که نسخه ی 5 هم نسخه ی مهمی به شمار می آید، بعد از آن نسخه ها به همان ترتیب نسخه ی 6، 7، و 8 نام گرفتند، از این میان بیشترین سهم تغییرات را در نسخه های اخیر، نسخه ی 5، 7 و 8 بر عهده داشته اند، در نسخه ی 5 امکاناتی مانند کلاس های عام (Generics) و حاشیه نگاری (Annotation) معرفی و افزوده شدند، در نسخه ی 8 هم عبارات لامبدا و جویبارها(Streams) به زبان اضافه شدند که برنامه نویسی تابعی را ممکن می سازند.</p>
+<p><img alt="تاریخچه نسخه های جاوا" src="../images/chapter1/2019-07-09-16-20-27.png" /></p>
+<p>به این نکته دقت کنید که اصطلاحاتی مانند J2SE، J2ME و J2EE اصطلاحاتی هستند که مربوط به نسخه ی 1.2 جاوا هستند، اگرچه هنوز برخی برنامه نویسان و فعالان این حوزه از این عبارات استفاده می کنند، اما بهتر است به جای آن از اسامی Java SE، Java ME و Java EE برای نسخه های فعلی این زبان استفاده کنیم.</p>
+<p><img alt="تاریخچه نسخه های جاوا" src="../images/chapter1/2019-07-09-16-20-49.png" /></p>
+<h2 id="_13">محبوبیت زبان های برنامه نویسی</h2>
+<p>در عین حال زبان جاوا امروزه زبان محبوب و در بین زبان های برنامه نویسی از رتبه ی بالایی برخوردار است. مراجع مختلفی زبان های برنامه نویسی را از لحاظ محبوبیت و میزان استفاده رتبه بندی کرده اند که در ادامه چهار رتبه بندی را مرور می کنیم:</p>
+<p><img alt="محبوبیت زبان های برنامه نویسی" src="../images/chapter1/2019-07-09-16-21-09.png" /></p>
+<p>همان طور که می بینید در هر چهار رتبه بندی زبان جاوا زبان مهمی هست. بیایید به دیگر زبان ها هم نگاهی داشته باشیم، مثلا زبان C یا ++C هم در اکثر رتبه بندی ها در جایگاه بالایی قرار دارد، و برخی از زبان ها هم به تازگی و بیش از پیش دارای اهمیت شده اند، مثلا زبان هایی اسکریپتی مانند Java Script،  Ruby و Python.</p>
+<ul>
+<li>اما بین این همه زبان برنامه نویسی، آیا زبان جاوا بهترین زبان برنامه نویسی دنیا است؟</li>
+<li>البته که نه! پس چه زمانی بهترین زبان برنامه نویسی دنیاست؟</li>
+</ul>
+<p><img alt="محبوبیت زبان های برنامه نویسی" src="../images/chapter1/2019-07-09-16-22-14.png" /></p>
+<p>واقعیت این است که هیچ زبانی بهترین نیست، هیچ زبانی وجود ندارد که بتوانیم بگوییم بهترین زبان برنامه نویسی دنیاست و از همه نظر از دیگر زبان ها بهتر هست، هر زبان برنامه نویسی مزایا و معایبی دارد و مناسب برای برخی کاربردهاست. نکته ای که مهم است این است که با توجه به هدفی که داریم زبان درستی را انتخاب کنیم و در انتخاب مراقب باشیم زبان مورد نظر از رده خارج نباشد.
+البته نکته خوب در مورد جاوا این است که در حوزه های متنوع و مختلفی نقش ایفا می کند و برنامه نویس جاوا می تواند برای برنامه نویسی موبایل، برنامه نویسی سمت سرور و حوزه های مختلف دیگری فعالیت کند.</p>
+<h2 id="_14">اولین برنامه به زبان جاوا</h2>
+<p>در این بخش می خواهیم اولین برنامه به زبان جاوا را به کمک هم بنویسیم، پیش از شروع می خواهیم مرور سریعی بر شرایطی که برای برنامه نویسی جاوا لازم داریم بکنیم. یا اصطلاحا ببینیم که چطور می توانیم محیط برنامه نویسی جاوا را نصب و راه اندازی کنیم.</p>
+<p><img alt="اولین برنامه به زبان جاوا" src="../images/chapter1/2019-07-09-16-22-54.png" /></p>
+<ul>
+<li>دریافت و نصب JDK:</li>
+</ul>
+<p>برای برنامه نویسی جاوا ابتدا به نصب و فراهم کردن JDK داریم، Java Development Kit این نرم افزار به شما اجازه می دهد برنامه های جاوا را کامپایل و اجرا نمایید. به این دقت داشته باشید که JDK و JRE با هم متفاوت هستند، JDK مجموعه ای از نرم افزارهاست که به شما امکان اجرای برنامه های جاوا را می دهد و به درد برنامه نویسان جاوا می خورد اما JRE بخش کوچکی از JDK را شامل می شود که تنها برای اجرای برنامه های جاوا کافی هست، بنابر این اگر کسی بخواهد یک برنامه جاوا را فقط اجرا کند، JRE برای این کار کافیست، اما اگر کسی بخواهد برنامه جاوا بنویسد و کامپایل و اجرا و احتمالا دیباگ کند، باید JDK در اختیار داشته باشد. و هر کدام از این دو مورد به صورت مستقل قابل دریافت (دانلود) و نصب کردن هستند.
+برای دریافت این پکیج ها می توانید به سایت اوراکل، جاواکاپ و یا سایر سایت های ایرانی یا خارجی مراجعه کنید. هنگام انتخاب پکیج به نسخه آن توجه کنید، چرا که همان طور که در بخش قبل دیدیم، برخی ویژگی ها از نسخه ای به بعد به این زبان اضافه شده اند. همچنین لازم است پکیجی متناسب با سیستم عامل خود دریافت کنید، برای مثال اگر از ویندوز، لینوکس یا مک استفاده می کنید، به راحتی می توانید نسخه ی مورد نظر خود را پیدا کنید، و معمولا JDK در دو نسخه 32 و 64 بیت ارائه می شود که برای انتخاب این ویژگی نیز به وضعیت سخت افزاری سیستم خود رجوع کنید. در شکل زیر بخشی از سایت جاواکاپ (بخش دانلودها) که در آن نسخه های مختلف JDK برای سیستم عامل های مختلف قرار داده شده است را می توانید ببینید:</p>
+<p><img alt="نسخه های مختلف JDK " src="../images/chapter1/2019-07-09-16-23-40.png" /></p>
+<p>نصب جاوا به دو طریق میسر است، اول با اجرا کردن فایل های اجرایی مورد نظر (exe برای ویندوز یا rpm برای لینوکس) و راه دیگر از طریق extract کردن فایل فشرده حاوی نسخه جاوا در محل مناسب. همچنین توصیه می کنیم:</p>
+<ul>
+<li>متغییر محیطی path را با افزودن مسیر قرار گرفتن فایل های اجرایی جاوا به آن ویرایش کنید تا بتوانید به راحتی از دستوراتی مانند javac در تمام دایرکتوری های سیستم خود استفاده نمایید.</li>
+<li>مسیر نصب جاوا را تا حد امکان در آدرسی بدون فاصله قرار دهید، مثلا در ویندوز: c:/java/jdk به جای c:/program files
+برای اجرای اولین برنامه قصد نداریم از محیط های توسعه (IDE) مانند eclipse یا intellij استفاده کنیم، گر چه این محیط ها برنامه نویسی را ساده تر می کنند، اما بخش هایی از روند اجرای برنامه را از دید ما پنهان می کنند و می خواهیم در اولین تمرین ها با استفاده از command line تمامی مراحل کامپایل و اجرای برنامه به زبان جاوا را مشاهده کنیم.</li>
+</ul>
+<h2 id="_15">اولین برنامه</h2>
+<p><img alt="اولین برنامه" src="../images/chapter1/2019-07-09-16-24-23.png" /></p>
+<p>برای نوشتن اولین برنامه به زبان جاوا یک فایل متنی با نام First.java بسازید، برای ساختن این فایل می توانید از برنامه هایی مانند notepad در ویندوز و gedit در لینوکس استفاده کنید. دقت کنید که پسوند این فایل مثلا .txt نباشد و دقیقا پسوند .java داشته باشد. به نحوه ی نام گذاری فایل ها دقت کنید، مثلا اینکه فایل های برنامه نویسی در جاوا با پسوند جاوا هستند.
+سپس این خطوط را در این فایل متنی بنویسید:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">First</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Salam!!!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>این برنامه دارای جزئیاتی است که هنوز در مورد آنها صحبت نکرده ایم و آموزش آنها شروع نشده است، فعلا می توانید حفظ کنید که این برنامه ساده می تواند رشته ای را در خروجی چاپ نماید.</p>
+<h2 id="_16">گام‌های لازم برای اجرای یک برنامه جاوا</h2>
+<p>هنگامی که برنامه را در فایل متنی نوشتیم، بایست مراحل زیر را برای اجرای آن طی کنیم:</p>
+<ul>
+<li>ابتدا برنامه باید کامپایل و به بایت کد تبدیل شود. برای کامپایل کردن برنامه های جاوا از دستور javac (java Compiler) استفاده می شود. به این صورت که بعد از این دستور نام فایلی که قصد کامپایل کردن آن را داریم می نویسیم:
+Javac First.java
+بعد از اجرای این دستور، در صورتی که برنامه شما صحیح و سالم باشد و خطایی نداشته باشد، کامپایل شده و فایل بایت کدی با پسوند .class و هم نام فایل اولیه ساخته می شود (در اینجا First.class)</li>
+<li>برای اجرا کردن این برنامه از دستور java استفاده می کنیم، به این صورت که بعد از این دستور نام کلاس را بدون هیچ پسوندی می نویسیم:
+Java First
+این دستور عملا ماشین مجازی جاوا را فراخوانی و برنامه ما را اجرا می نماید.</li>
+</ul>
+<p><img alt="گام‌های لازم برای اجرای یک برنامه جاوا_1" src="../images/chapter1/2019-07-09-16-27-05.png" /></p>
+<p>مثال عملی:
+در این قسمت می خواهیم دستوراتی که یاد گرفتیم را در خط فرمان ویندوز اجرا و نتیجه را قدم به قدم مرور کنیم. پنجره خط فرمان در ویندوز را می توانید با جست و جوی عبارت cmd و یا جست و جوی برنامه run و سپس نوشتن عبارت cmd در پنجره run باز کنید. سپس با دستور dir می توانید لیست فایل های موجود در مسیر (دایرکتوری) جاری را ببینید:</p>
+<p><img alt="گام‌های لازم برای اجرای یک برنامه جاوا_2" src="../images/chapter1/2019-07-09-16-27-34.png" /></p>
+<p>همان طور که در شکل می بینید در ابتدا تنها فایل First.java که همان فایل متنی هست که کد آن را در قسمت قبل نوشتیم در این مسیر وجود دارد، (برای رفتن به مسیری که فایل شما در آن واقع است می توانید از دستوراتی مانند cd مخفف  change directory استفاده کنید و در صورت بروز مشکل از جست و جو در اینترنت کمک بگیرید) حال دستور کامپایل را اجرا و مجددا لیست فایل های موجود را مشاهده می کنیم:</p>
+<p><img alt="گام‌های لازم برای اجرای یک برنامه جاوا_3" src="../images/chapter1/2019-07-09-16-28-05.png" /></p>
+<p>خواهید دید که فایل First.class که حاوی بایت کد برنامه ما هست به فایل ها اضافه شده است. و در نهایت با دستور java ماشین مجازی را برای اجرای برنامه خود فراخوانی می کنیم:</p>
+<p><img alt="گام‌های لازم برای اجرای یک برنامه جاوا_4" src="../images/chapter1/2019-07-09-16-28-19.png" /></p>
+<p>در این حالت برنامه ما اجرا و عبارت سلام در خط فرمان چاپ می شود.
+همچنین می توانید داخل پرانتز تابع println به جای یک متن، یک عدد صحیح و یا اعشاری بنویسید و برنامه را مجددا کامپایل و اجرا کنید، خواهید دید که پس از اجرای برنامه آن عدد در خروجی نمایش داده خواهد شد. و یا می توانید برای جدا کردن ارقام اعداد از underline استفاده کنید.
+همانظور که در مثال زیر مشاهده می کنید، می توانیم به جای یک مقدار، از یک عبارت ریاضی استفاده کنیم و برنامه جاوا آن را محاسبه و نتیجه را برای من چاپ خواهد کرد، البته در مورد جزئیات نحوه ی کار با عملگرها در زبان جاوا، در فصل های بعد صحبت می کنیم.</p>
+<p><img alt="گام‌های لازم برای اجرای یک برنامه جاوا_5" src="../images/chapter1/2019-07-09-16-28-33.png" /></p>
+<p>نکاتی درباره اولین مثال:</p>
+<ul>
+<li>یک برنامه ساده یک فایل متنی با پسوند .java خواهد بود. این فایل شامل یک کلاس است که در مثال قبل ما اسم آن را First گذاشته بودیم (درباره مفهوم کلاس بعدا صحبت می کنیم)</li>
+<li>اسم کلاس باید دقیقا با اسم فایل منطبق باشد، بزرگ و کوچک بودن حروف در جاوا مهم است. (اصطلاحا گفته می شود جاوا زبانی case sensitive است) پس اگر نام کلاس با حرف بزرگ نوشته شده است، نام فایل نیز بایست با حرف بزرگ شروع شود.</li>
+<li>و کلاس ما شامل یک متد main بود که کوچک و بزرگ بودن نام این تابع نیز اهمیت دارد. و هر وقت که ما یک برنامه جاوا را اجرا می کنیم، به صورت اتوماتیک متد main صدا زده می شود و اجرا می شود.</li>
+</ul>
+<h2 id="_17">کویز</h2>
+<p><img alt="کویز جاوا_1" src="../images/chapter1/2019-07-09-16-28-44.png" /></p>
+<p>در این بخش با دو سوال کوتاه مفاهیمی که یاد گرفتیم را مرور می کنیم:</p>
+<ol>
+<li>
+<p>از بین برنامه هایی که نام آنها در زیر آمده است، مشخص کنید کدامشان برنامه های مستقل از سکو هستند؟ (اگر چندتا هستند همه را مشخص کنید) در واقع باید بگویید آیا این برنامه ها را می توان مستقل از سخت افزار و سیستم عامل و سایر عوامل محیطی روی هر سیستمی اجرا کرد یا نه.</p>
+<ul>
+<li>Microsoft Word</li>
+<li>JVM</li>
+<li>Firefox</li>
+<li>First.java</li>
+<li>First.class</li>
+</ul>
+<p>پاسخ:</p>
+<ul>
+<li>برنامه Microsoft word برای ویندوز طراحی و ساخته شده است و قابل اجرا در لینوکس یا سایر محیط ها نیست.</li>
+<li>خود Jvm مستقل از سکو نیست، و برنامه ای است که برای platform های مختلف عرضه شده است و همان طور که دیدیم هنگام دانلود JDK که حاوی JVM هم هست بایست مشخص کنیم که این پکیج را برای کدام سکو و سیستم عامل لازم داریم.</li>
+<li>Firefox که یک مرورگر صفحات وب هست نیز مستقل از سکو نیست، به این معنا که همان فایرفاکسی که در ویندوز اجرا می شود قابل اجرا و استفاده در لینوکس نخواهد بود، البته فایرفاکس برای لینوکس یا سایر محیط ها هم وجود دارد، اما برنامه اجرایی فایرفاکسی که در ویندوز اجرا می شود با لینوکس با سایر محیط ها متفاوت است.</li>
+<li>دو مورد آخر یعنی First.java و  First.class مستقل از سکو هستند، البته First.java خودش قابل اجرا نیست ابتدا باید به First.class ترجمه شود و سپس توسط ماشین مجازی جاوا اجرا شود. در واقع همان  First.class ای که در ویندوز اجرا می شود بدون نیاز به هیچ تغییری قابل اجرا در سایر محیط ها هست و نتیجه اجرا در سیستم عامل ها و محیط های مختلف یکسان خواهد بود.</li>
+</ul>
+</li>
+<li>
+<p>برنامه ای که در زیر نوشته شده است، دارای اشکالاتی هست، سعی کنید آنها را پیدا کنید و به جزئیاتی مانند نام فایل و یا سایر نام گذاری ها هم دقت کنید:</p>
+</li>
+</ol>
+<p><img alt="کویز جاوا_2" src="../images/chapter1/2019-07-09-16-30-02.png" /></p>
+<p>پاسخ:</p>
+<ul>
+<li>اولین اشکال این است که اسم کلاس و نام فایل باید یکسان باشد، مثلا اگر نام فایل intro.java هست، نام کلاس هم باید intro باشد، این یک اشکال نحوی است که کامپایلر آن را نشان خواهد داد.</li>
+<li>اشکال بعدی این است که باید نام متد main  را با حروف کوچک می نوشتیم در حالی که با حروف بزرگ نوشته ایم، اما این یک اشکال نحوی نیست، اصطلاحا syntax error نداریم و برنامه ها بدون خطا قابل کامپایل شدن است. این یک اشکال منطقی است و موجب می شود برنامه ما اجرا نشود.</li>
+<li>و یک اشکال دیگر هم هست، بهتر است اسم کلاس را با حرف بزرگ شروع کنیم مانند First که قبلا نوشته بودیم، این یک قانون نیست، اما عرفی است که بین برنامه نویسان جاوا وجود دارد. در واقع این یک قرارداد بین برنامه نویسان جاواست.</li>
+</ul>
+<h2 id="_18">جمع بندی</h2>
+<ul>
+<li>ما در این فصل دیدیم که جاوا زبان بسیار مهم و پرکاربردی هست.</li>
+<li>در مورد تاریخچه و ویژگی های این زبان با هم صحبت کردیم.</li>
+<li>و دیدیم که جاوا در واقع فراتر از یک زبان برنامه نویسی است، یک فن آوری و بستر برنامه نویسی است. در در حول و حوش این زبان یک اکوسیستم تولید نرم افزار ایجاد شده است که امروزه یکی از مهم ترین رویکرهای تولید نرم افزار در دنیا هست.</li>
+</ul>
+<h2 id="_19">جست و جو کنید و بخوانید</h2>
+<p><img alt="جست و جو کنید و بخوانید" src="../images/chapter1/2019-07-09-16-30-35.png" /></p>
+<p>پیشنهاد می کنیم در مورد مفاهیمی که در این فصل در مورد آنها صحبت کردیم، جست و جو کنید و بخوانید، مخصوصا از گوگل و ویکی پدیا استفاده کنید و چند صفحه ای در مورد این مفاهیم بخوانید:</p>
+<ul>
+<li>جاوا چه مزایایی دارد؟</li>
+<li>حتی جاوا چه معایبی دارد؟ و منتقدین جاوا چه انقادهایی به این زبان وارد کرده اند؟</li>
+<li>و طرفداران جاوا چه پاسخ هایی داده اند؟ مثلا آیا جاوا کند است؟</li>
+<li>و یا اینکه این زبان چه امکاناتی برای افزایش سرعت برنامه ها فراهم کرده است؟ مثلا Hotspot در جاوا چیست؟</li>
+</ul>
+<p>و یا کلید واژه های دیگری که به این موضوع مرتبط هستند مانند:</p>
+<ul>
+<li>Java</li>
+<li>JVM</li>
+<li>Byte Code</li>
+<li>Java Mobile</li>
+<li>Oracle</li>
+</ul>
+<p>و یا در مورد مقایسه این زبان با سایر زبان ها بخوانید:</p>
+<ul>
+<li>Java  و سی‌پلاس‌پلاس</li>
+<li>سی‌شارپ و جاوا</li>
+<li>Java و javascript</li>
+</ul>
+<p>دنبال کردن مطالب جاوا به صورت عمومی هم می‌تواند مفید باشد برای مثال به طور هفتگی مطالب دانستنی javacup.ir را دنبال کنید.</p>
+<h2 id="_20">تمرین</h2>
+<ol>
+<li>به عنوان اولین تمرین حتما JDK را دانلود و نصب کنید.</li>
+<li>برنامه ای بنویسید که اسم شما را در خروجی چاپ کند.</li>
+<li>این برنامه را کامپایل و اجرا کنید. این کار را مانند آنچه در این فصل یاد گرفتیم بدون استفاده از محیط های توسعه و با کمک دستورات خط فرمان انجام دهید تا این فرآیند را خوب یاد بگیرید و اینکه در هر مرحله چه فایلی تولید می شود را شخصا مشاهده نمایید.</li>
+</ol>
+<p><img alt="تمرین" src="../images/chapter1/2019-07-09-16-56-59.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="معرفی" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  قبلی
+                </span>
+                معرفی
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-initial-concepts/" title="02- مفاهیم اولیه زبان جاوا" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  بعدی
+                </span>
+                02- مفاهیم اولیه زبان جاوا
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

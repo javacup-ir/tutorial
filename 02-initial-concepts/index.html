@@ -1,0 +1,2578 @@
+
+
+
+<!doctype html>
+<html lang="fa" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+    
+    
+      
+        <title>02- مفاهیم اولیه زبان جاوا - جاوا</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.63b94e9e.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="rtl">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02-" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="جاوا" class="md-header-nav__button md-logo" aria-label="جاوا">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            جاوا
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              02- مفاهیم اولیه زبان جاوا
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="جاوا" class="md-nav__button md-logo" aria-label="جاوا">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    جاوا
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="معرفی" class="md-nav__link">
+      معرفی
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../01-intro-to-java/" title="01- آشنایی با جاوا" class="md-nav__link">
+      01- آشنایی با جاوا
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        02- مفاهیم اولیه زبان جاوا
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="02- مفاهیم اولیه زبان جاوا" class="md-nav__link md-nav__link--active">
+      02- مفاهیم اولیه زبان جاوا
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    محیط‌های توسعه
+  </a>
+  
+    <nav class="md-nav" aria-label="محیط‌های توسعه">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eclipse" class="md-nav__link">
+    معرفی عمیق‌تر Eclipse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    اولین برنامه (در محیط توسعه)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      03 string array
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="03 string array" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        03 string array
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part1/" title="رشته، آرایه و چند داستان دیگر" class="md-nav__link">
+      رشته، آرایه و چند داستان دیگر
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part10/" title="سایر ساختارهای کنترل جریان برنامه" class="md-nav__link">
+      سایر ساختارهای کنترل جریان برنامه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part11/" title="دستور Break" class="md-nav__link">
+      دستور Break
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part12/" title="دستور Continue" class="md-nav__link">
+      دستور Continue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part13/" title="حلقه های تودرتو" class="md-nav__link">
+      حلقه های تودرتو
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part14/" title="نکته روز" class="md-nav__link">
+      نکته روز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part15/" title="توضیحات (Comments)" class="md-nav__link">
+      توضیحات (Comments)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part16/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part17/" title="رشته (String)" class="md-nav__link">
+      رشته (String)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part18/" title="سلسله مراتب داده ها" class="md-nav__link">
+      سلسله مراتب داده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part19/" title="جاوا و یونیکد" class="md-nav__link">
+      جاوا و یونیکد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part2/" title="برنامه های کنسول" class="md-nav__link">
+      برنامه های کنسول
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part20/" title="کاراکترهای ویژه در جاوا" class="md-nav__link">
+      کاراکترهای ویژه در جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part21/" title="آرایه" class="md-nav__link">
+      آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part22/" title="نحوه ی ایجاد آرایه" class="md-nav__link">
+      نحوه ی ایجاد آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part23/" title="راه کوتاه ایجاد آرایه" class="md-nav__link">
+      راه کوتاه ایجاد آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part24/" title="آرایه های چند بعدی" class="md-nav__link">
+      آرایه های چند بعدی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part25/" title="آرایه های چند بعدی نامتوازن" class="md-nav__link">
+      آرایه های چند بعدی نامتوازن
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part26/" title="ارسال آرایه به متد (Parameter Passing)" class="md-nav__link">
+      ارسال آرایه به متد (Parameter Passing)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part27/" title="پارامترهای آرایه چند بعدی" class="md-nav__link">
+      پارامترهای آرایه چند بعدی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part28/" title="پیمایش روی آرایه" class="md-nav__link">
+      پیمایش روی آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part29/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part3/" title="دریافت مقدار از ورودی" class="md-nav__link">
+      دریافت مقدار از ورودی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part30/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part31/" title="تمرین (آرایه)" class="md-nav__link">
+      تمرین (آرایه)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part32/" title="تمرین (رشته)" class="md-nav__link">
+      تمرین (رشته)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part33/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part34/" title="مطالعه تکمیلی" class="md-nav__link">
+      مطالعه تکمیلی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part4/" title="تبدیل و کنترل نوع" class="md-nav__link">
+      تبدیل و کنترل نوع
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part5/" title="تبدیل مستقیم انواع داده" class="md-nav__link">
+      تبدیل مستقیم انواع داده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part6/" title="جدول تبدیل انواع داده" class="md-nav__link">
+      جدول تبدیل انواع داده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part7/" title="چند نکته درباره اعداد اعشاری" class="md-nav__link">
+      چند نکته درباره اعداد اعشاری
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part8/" title="انتساب های عدد" class="md-nav__link">
+      انتساب های عدد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-string-array/part9/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      04 intro to OOP
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="04 intro to OOP" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        04 intro to OOP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part1/" title="برنامه نویسی شی گرا (OOP)" class="md-nav__link">
+      برنامه نویسی شی گرا (OOP)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part10/" title="تعریف اولین کلاس" class="md-nav__link">
+      تعریف اولین کلاس
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part11/" title="مثال اول: مستطیل" class="md-nav__link">
+      مثال اول: مستطیل
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part12/" title="چگونه از کلاس مستطیل استفاده کنیم؟" class="md-nav__link">
+      چگونه از کلاس مستطیل استفاده کنیم؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part13/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part14/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part15/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part16/" title="تمرین" class="md-nav__link">
+      تمرین
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part17/" title="جستجو کنید و بخوانید" class="md-nav__link">
+      جستجو کنید و بخوانید
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part2/" title="فضای مساله و فضای راه حل" class="md-nav__link">
+      فضای مساله و فضای راه حل
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part3/" title="رویکرد شیءگرا" class="md-nav__link">
+      رویکرد شیءگرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part4/" title="شی گرایی در برابر رویکرد رویه ای" class="md-nav__link">
+      شی گرایی در برابر رویکرد رویه ای
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part5/" title="مشخصات برنامه نویسی شی گرا" class="md-nav__link">
+      مشخصات برنامه نویسی شی گرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part6/" title="مفاهیم برنامه نویسی شی گرا" class="md-nav__link">
+      مفاهیم برنامه نویسی شی گرا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part7/" title="کنترل دسترسی" class="md-nav__link">
+      کنترل دسترسی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part8/" title="محصورسازی" class="md-nav__link">
+      محصورسازی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-intro-to-OOP/part9/" title="واسط" class="md-nav__link">
+      واسط
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      05 objects in java
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="05 objects in java" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        05 objects in java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part1/" title="سرفصل مطالب" class="md-nav__link">
+      سرفصل مطالب
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part10/" title="آرایه و ارجاعات" class="md-nav__link">
+      آرایه و ارجاعات
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part11/" title="رشته در جاوا" class="md-nav__link">
+      رشته در جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part12/" title="نیم نگاهی به کلاس String" class="md-nav__link">
+      نیم نگاهی به کلاس String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part13/" title="مثال" class="md-nav__link">
+      مثال
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part14/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part15/" title="زباله روب (Garbage Collector)" class="md-nav__link">
+      زباله روب (Garbage Collector)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part16/" title="فراخوانی متد" class="md-nav__link">
+      فراخوانی متد
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part17/" title="پارمترها چگونه به متدها پاس می شوند؟" class="md-nav__link">
+      پارمترها چگونه به متدها پاس می شوند؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part18/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part19/" title="بخش های مختلف آرایه" class="md-nav__link">
+      بخش های مختلف آرایه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part2/" title="اشیاء در برنامه های جاوا" class="md-nav__link">
+      اشیاء در برنامه های جاوا
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part20/" title="تنظیم اندازه Stack وHeap برای یک برنامه" class="md-nav__link">
+      تنظیم اندازه Stack وHeap برای یک برنامه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part21/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part22/" title="تمرین عملی" class="md-nav__link">
+      تمرین عملی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part23/" title="جمع بندی" class="md-nav__link">
+      جمع بندی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part24/" title="تمرین" class="md-nav__link">
+      تمرین
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part25/" title="جستجو کنید و بخوانید" class="md-nav__link">
+      جستجو کنید و بخوانید
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part3/" title="اشیاء در حافظه" class="md-nav__link">
+      اشیاء در حافظه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part4/" title="عملگر new" class="md-nav__link">
+      عملگر new
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part5/" title="انواع داده ها" class="md-nav__link">
+      انواع داده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part6/" title="تفاوت یک متغیر اولیه با یک شی" class="md-nav__link">
+      تفاوت یک متغیر اولیه با یک شی
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part7/" title="مفهوم ارجاع (Reference)" class="md-nav__link">
+      مفهوم ارجاع (Reference)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part8/" title="ساخت اشیاء" class="md-nav__link">
+      ساخت اشیاء
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-objects-in-java/part9/" title="آرایه ها در جاوا" class="md-nav__link">
+      آرایه ها در جاوا
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      06 birth and death objects
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="06 birth and death objects" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        06 birth and death objects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part1/" title="تولد و مرگ اشیاء (Object Initialization & Clean up)" class="md-nav__link">
+      تولد و مرگ اشیاء (Object Initialization & Clean up)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part10/" title="سایر روش های مقدار دهی اولیه" class="md-nav__link">
+      سایر روش های مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part11/" title="ترتیب مقدار دهی اولیه" class="md-nav__link">
+      ترتیب مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part12/" title="کاربرد this برای سازنده ها" class="md-nav__link">
+      کاربرد this برای سازنده ها
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part13/" title="خلاصه مقدار دهی اولیه" class="md-nav__link">
+      خلاصه مقدار دهی اولیه
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part14/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part15/" title="فرآیند مرگ اشیاء" class="md-nav__link">
+      فرآیند مرگ اشیاء
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part2/" title="آماده سازی اولیه اشیاء (Initialization)" class="md-nav__link">
+      آماده سازی اولیه اشیاء (Initialization)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part3/" title="اشکال راهکار استفاده از متد init چیست؟" class="md-nav__link">
+      اشکال راهکار استفاده از متد init چیست؟
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part4/" title="سازنده (constructor)" class="md-nav__link">
+      سازنده (constructor)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part5/" title="نحوه ی کار سازنده (Constructor)" class="md-nav__link">
+      نحوه ی کار سازنده (Constructor)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part6/" title="سازنده هایی با پارامترهای مختلف" class="md-nav__link">
+      سازنده هایی با پارامترهای مختلف
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part7/" title="وظیفه‌ی سازنده" class="md-nav__link">
+      وظیفه‌ی سازنده
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part8/" title="مقادیر پیش فرض" class="md-nav__link">
+      مقادیر پیش فرض
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-birth-and-death-objects/part9/" title="کویز" class="md-nav__link">
+      کویز
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    محیط‌های توسعه
+  </a>
+  
+    <nav class="md-nav" aria-label="محیط‌های توسعه">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eclipse" class="md-nav__link">
+    معرفی عمیق‌تر Eclipse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    اولین برنامه (در محیط توسعه)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="02-">02- مفاهیم اولیه زبان جاوا</h1>
+<p><img alt="" src="../images/chapter2/image2.gif" /></p>
+<p>در این فصل ابتدا در مورد محیط‌های توسعهٔ نرم‌افزار صحبت می کنیم و با
+برخی از این محیط های آشنا می‌شویم، سپس سراغ ساختارهای مختلف زبان جاوا خواهیم رفت. ابتدا متغیرها و نحوه‌ی تعریف کردن و استفاده از آن‌ها را می‌بینیم، درباره انواع داده‌ی اولیه در زبان جاوا صحبت می کنیم، عملگرها و
+ویژگی‌های آن‌ها را بررسی می‌کنیم و درباره ساختار کنترل جریان برنامه و شرط
+ها می‌خوانیم، بعد از آن در مورد انواع حلقه ها در زبان جاوا و ویژگی‌های
+هر کدام صحبت می کنیم و در نهایت با متدها، تعریف و نحوه‌ی استفاده از آن‌ها آشنا می‌شویم.</p>
+<h2 id="_1">محیط‌های توسعه</h2>
+<p><img alt="" src="../images/chapter2/image3.gif" /></p>
+<p>محیط‌های توسعه یا محیط‌های توسعه‌ی یکپارچه (Integrated Development Environment)، برنامه هایی هستند که ما از آنها برای برنامه‌نویسی استفاده می کنیم، و در واقع برنامه‌های خود را در آن‌ها می‌نویسیم.
+این محیط‌ها مجموعه‌ای از امکانات مورد نیاز برنامه نویس را گردآوری کرده‌اند و به صورت یکپارچه در اختیار برنامه نویس قرار می‌دهند تا بتواند کارش را سریع‌تر و بهتر انجام دهد. در واقع IDE ها مانند جعبه ابزاری در دست برنامه‌نویس هستند.</p>
+<ul>
+<li>مزایای محیط‌های توسعه</li>
+</ul>
+<p>استفاده از محیط‌های توسعه مزایای مختلفی دارد، برنامه نویسی را آسان تر و
+سریع‌تر می‌کند خطای برنامه نویسی را کاهش می‌دهد و کارهایی که قابل خودکار سازی هستند را خودکار می کند. البته باید توجه داشت که می‌توان بدون استفاده از این محیط‌ها هم برنامه نویسی کرد، مثلا برنامه را درون notepad نوشت و توسط خط فرمان (cmd در ویندوز یا terminal در سیستم‌عامل‌های دیگر) آن را کامپایل و اجرا کرد، مشابه آن‌چه در فصل قبل دیدیم، اما این کار برنامه نویسی را خیلی سخت و احتمال اشتباهات را زیاد می‌کند.</p>
+<ul>
+<li>امکانات محیط‌های توسعه</li>
+</ul>
+<p>محیط‌های توسعه به ما کمک می‌کنند تا برنامه را کامپایل و اجرا کنیم،
+برنامه را رفع اشکال (debug) کنیم و مثلا آن را خط به خط اجرا
+کنیم و در هر بخش مقدار متغیرها و یا ویژگی های مختلف برنامه‌مان را بررسی کنیم و به دنبال اشکال برنامه بگردیم. همچنین کمک می‌کنند تا خطاها و هشدارهای مربوط به برنامه‌مان را راحت‌تر ببینیم و پیگیری کنیم.</p>
+<p>در تولید و تکمیل کد به ما کمک می کنند، به این امکان Autocomplete گفته می شود. همچنین امکانات مناسبی برای جست‌وجو در بین کدها و فایل‌های پروژه در اختیار ما قرار می‌دهند و همچنین برای تغییر بخشی از فایل‌ها یا پروژه‌ها و کلاس‌ها امکانات خودکارسازی فراهم می‌کنند.</p>
+<p>همچنین امکانات فرعی و جنبی دیگری نیز توسط محیط‌های توسعه فراهم می‌شوند مانند اتصال به مخزن کد (Code repositories) و یا سایر
+امکانات بصری مانند شکل‌ها و گراف‌ها و ...</p>
+<ul>
+<li>محیط های توسعه در جاوا</li>
+</ul>
+<p>محیط های توسعه مختلفی برای جاوا وجود دارند که از بین آنها محبوب ترین محیط ها این‌ها هستند:</p>
+<ol>
+<li>Eclipse</li>
+</ol>
+<p><img alt="" src="../images/chapter2/image4.png" /></p>
+<p>این محیط توسط بنیاد اکلیپس توسعه داده شده و منتشر شده است. از محیط‌های توسعه محبوب میان برنامه‌نویسان جاواست که به صورت نرم‌افزار آزاد و رایگان در دسترس قرار می‌گیرد. همچنین امکان توسعه برنامه‌های اندروید و زبان‌های سی/سی‌پلاس‌پلاس و پایتون و ... هم در این محیط وجود دارد.</p>
+<p>همچنین جامعه کاربری (Community) این محیط توسعه بسیار فعال هستند و آن را به خوبی پشتیبانی می‌کنند.</p>
+<ol>
+<li>NetBeans</li>
+</ol>
+<p><img alt="" src="../images/chapter2/image5.jpeg" /></p>
+<p>این محیط، محصول مشترک Oracle (شرکت سازندهٔ جاوا) و بنیاد آپاچی‌ است. بنیاد آپاچی در توسعه محصولات جاوایی سابقه طولانی دارد و محصولات پرکاربرد دیگری مانند maven نیز عرضه کرده‌است. این محیط توسعه هم مانند Eclipse به صورت نرم‌افزار آزاد عرضه شده و قابلیت توسعه نرم‌افزار به زبان‌های php و سی‌/سی‌پلاس‌پلاس و جاوااسکریپت را نیز دارد.</p>
+<ol>
+<li>Intellij Idea</li>
+</ol>
+<p><img alt="" src="../images/chapter2/image6.png" /></p>
+<p>این محیط توسعه، امروزه یکی از محبوب‌ترین و پرکاربرد‌ترین محیط‌ها در بین برنامه‌نویسان جاواست. توسط شرکت JetBrains توسعه داده می‌شود و در دو نسخه Community و Ultimate عرضه می‌شود. نسخه Community به صورت نرم‌افزار آزاد و رایگان عرضه می‌شود ولی نسخه حرفه‌ای قابل خریداری است.</p>
+<p>این شرکت محیط‌های توسعه با کیفیت دیگری برای اکثر زبان‌ها دارد مثلا PyCharm برای پایتون و CLIon برای C/C++.</p>
+<p>البته این‌ها محبوب‌ترین محیط‌ها هستند که تصمیم به معرفی آن‌ها گرفتیم ولی محیط‌های دیگری هم بوده اند که به مرور زمان از محبوبیتشان کاسته شده (مثلا BlueJ و Codenvy و DrJava و JCreator و...) و در حال حاضر بیشتر برنامه نویسان جاوا از یکی از این سه محیط استفاده می‌کنند.</p>
+<p>در نظر داشته باشید که عده‌ای از برنامه‌نویسان نیز محیط توسعه را کنار گذاشته و از ترکیب ادیتور‌های متنی قدرتمند و پلاگین‌ها استفاده می‌کنند. این پلاگین‌ها بسیاری از قابلیت‌های محیط توسعه را فراهم می‌کنند. برای مثال VS Code یک ادیتور متنی است که با نصب پلاگین‌ها و انجام تنظیمات لازم، قابلیت رقابت با ویژگی‌های محیط‌های توسعه را دارد و به همین دلیل عده‌ای آن را در دسته محیط‌های توسعه قرار می‌دهند. همچنین ادیتور‌های Vim و Emacs نیز با نصب پلاگین‌های مختلف، امکان تبدیل به محیط توسعه جاوا را دارند. دلیلی که عده‌ای از این ابزارها به جای محیط‌های توسعهٔ کامل استفاده می‌کنند، مصرف کم‌تر منابع، زمان بالا آمدن سریع (در مقایسه با محیط‌های توسعه)، قابلیت ادیت متن از کنسول (برای مثال به صورت ریموت روی سرور) و قابلیت شخصی‌سازی فوق‌العاده بالاست. جالب است بدانید ادیتور‌های Vim و Emacs با زبان‌های vim script و emacs lisp قابلیت برنامه‌ریزی شدن و انجام تغییرات دلخواه را دارند.</p>
+<p>اگر این تنوع را با دیگر زبان‌ها مثلا با خانواده زبان‌های دات‌نت مقایسه کنیم، مشاهده می‌کنیم که در آنجا یک محیط مجتمع با نام ویژوال استودیو وجود دارد که همه از همان محیط استفاده می‌کنند و تنوع و رقابتی که در محیط‌های توسعه جاوا وجود دارد، بیش‌تر از اکثر محیط‌های دیگر است.</p>
+<p><img alt="" src="../images/chapter2/image7.png" /></p>
+<p>دقت داشته باشید که محیط توسعهٔ شرکت مایکروسافت برای زبان‌های خانواده دات‌نت، Visual Studio (به اختصار VS) است ولی ادیتوری که قابلیت ویرایش متن و توسعه به انوان زبان‌ها را دارد، محصولی متفاوت است و VS Code نام دارد (که البته محصول همین شرکت است).</p>
+<h4 id="eclipse">معرفی عمیق‌تر Eclipse</h4>
+<p><img alt="" src="../images/chapter2/image8.png" /></p>
+<p>از بین محیط های که در مورد آنها صحبت کردیم، Eclipse یکی از گزینه‌های مطرح و پراستفاده است و درصد زیادی از برنامه نویسان جاوا از این محیط استفاده می کنند، به همین خاطر ما در این بخش کمی با این محیط آشنا می‌شویم و برخی امکانات آن را مرور می کنیم. </p>
+<p>دقت داشته باشید که تمامی محیط‌ها مزایا و معایبی دارند و انتخاب محیط توسعه گاهی اوقات تصمیمی سلیقه‌ای است، گاهی این تصمیم توسط مدیرپروژه و تیم در یک شرکت گرفته می شود و برنامه نویسان ملزم به رعایت آن هستند و گاهی نیز دست برنامه نویسان برای انتخاب محیط توسعه باز است. </p>
+<p>شما می توانید دو محیط دیگر را هم امتحان کنید. توجه داشته باشید که نسخه Community نرم‌افزار Intellij Idea رایگان است و نیازی به کرک کردن هم ندارد و خیلی از امکانات مورد نیاز را پشتیبانی می‌کند.</p>
+<p><img alt="میزان محبوبیت محیط‌های توسعه مختلف در سال 2019" src="../images/chapter2/image9.png" /></p>
+<ul>
+<li>دانلود و نصب اکلیپس</li>
+</ul>
+<p>اکلیپس از سایت eclipse.org قابل دانلود است، همچنین می‌توانید از طریق دیسک‌های نوری حوزه‌ی جاوا این
+محیط را نصب کنید، اگر قصد دانلود آن از سایت مرجع را دارید، پس از ورود به صفحه‌ی دانلود ابتدا سیستم عامل، نوع سیستم (32 یا 64 بیتی بودن) و سپس نسخه اکلیپس مورد نظر خود را انتخاب کنید. اکلیپس نسخه‌های مختلفی دارد که ساده ترین نوع آن (Eclipse IDE for java Developers) برای مباحثی که ما در این کتاب یاد می‌گیریم کافی است.</p>
+<p><img alt="" src="../images/chapter2/image10.png" /></p>
+<p>البته نسخه های دیگری مانند نسخه ی Java EE وجود دارند که در مباحث این کتاب، نیازی به آن‌ها نخواهیم داشت. </p>
+<h3 id="_2">اولین برنامه (در محیط توسعه)</h3>
+<p>در این بخش می خواهیم کمی با اکلیپس آشنا شویم، هنگامی که اکلیپس را به صورت یک فایل فشرده دریافت و آن را در مسیر دلخواه خود باز کنیم با ساختاری مشابه زیر مواجه خواهیم شدم.</p>
+<p><img alt="" src="../images/chapter2/image11.png" /></p>
+<p>این فولدر شامل یک فایل اجرایی برای اجرای برنامه اکلیپس است که بعد از اجرای آن با محیط اکلیپس به صورت زیر رو به رو خواهیم شد.</p>
+<p><img alt="" src="../images/chapter2/image12.png" /></p>
+<p>در این پنجره می توانید آدرس محلی که می‌خواهید پروژه‌های جاوایی شما در آن ذخیره شوند را مشخص کنید، برای مثال ما آن را درون پوشه‌ی خود اکلیپس انتخاب کردیم. سپس با تایید این محل به محیط اصلی وارد می‌شویم.</p>
+<p><img alt="" src="../images/chapter2/image13.png" /></p>
+<p>از منوی فایل گزینه‌ی new و سپس java project را انتخاب می‌کنیم.</p>
+<p><img alt="" src="../images/chapter2/image14.png" /></p>
+<p>در این قسمت نام پروژه را انتخاب و تایید می‌کنیم.</p>
+<p><img alt="" src="../images/chapter2/image15.png" /></p>
+<p>سپس با انتخاب آیکن restore می‌توانید پروژه‌ی خود را مشاهده کنید.</p>
+<p><img alt="" src="../images/chapter2/image16.png" /></p>
+<p><img alt="" src="../images/chapter2/image17.png" /></p>
+<p>برای نوشتن اولین برنامه روی پوشه‌ی src کلیک راست کرده و به صورت زیر یک کلاس بسازید.</p>
+<p><img alt="" src="../images/chapter2/image18.png" /></p>
+<p><img alt="" src="../images/chapter2/image19.png" /></p>
+<p>اگر به یاد داشته باشید، ساده ترین برنامهٔ جاوا یک کلاس است که یک متد main در آن وجود دارد، پس این متد را می‌نویسیم. (به کلمات کلیدی public &amp; static توجه کنید اما معنای آنها را در ادامه خواهیم دید)</p>
+<p><img alt="" src="../images/chapter2/image20.png" /></p>
+<p>حال می توانیم با دستور <code>System.out.println</code> در خروجی استاندارد چاپ کنیم.</p>
+<p><img alt="" src="../images/chapter2/image21.png" /></p>
+<p>توجه کنید که این متد باید main نام داشته باشد، هنگامی که شما یک کلاس در اکلیپس ایجاد می‌کنید، اکلیپس به صورت خودکار آن را کامپایل می کند (javac را اجرا می نماید)، برای دیدن این موضوع
+بگذارید نگاهی به workspace بیاندازیم.</p>
+<p><img alt="" src="../images/chapter2/image22.png" /></p>
+<p>فایل جاوای کلاسی که ما ایجاد کرده ایم همانطور که در تصویر بالا دیده می‌شود در
+مسیر <code>workspace/&lt;project name&gt;/src</code> قرار دارد و در مسیر پروژه فولدر دیگری به نام Bin را می بینیم که شامل برنامه‌های کامپایل شده‌است و چون ما کلاس خودمان را دخیره کرده‌ایم عملیات کامپایل انجام شده و یک
+فایل .class متناسب با آن در این مسیر <code>worksace/&lt;project name&gt;/bin</code> ایجاد شده است.</p>
+<p><img alt="" src="../images/chapter2/image23.png" /></p>
+<p>با توجه به اینکه اکلیپس برنامه‌ی ما را به صورت خودکار کامپایل کرده است، می‌توانیم آن را اجرا نماییم، برای این کار کافیست برنامه‌ی کامپایل شده را از منوی run as انتخاب و را اجرا کنیم.</p>
+<p><img alt="" src="../images/chapter2/image24.png" /></p>
+<p><img alt="" src="../images/chapter2/image25.png" /></p>
+<p>یکی از امکانات محیط‌های توسعه این هست که کنسول را نیز در اختیار ما قرار می‌دهند و می توانیم خروجی برنامه خود را در همان محیط مشاهده کنیم. </p>
+<p>ما در این مثال از امکانات پیشرفته‌ی اکلیپس مانند تکمیل کد استفاده نکردیم تا همه چیز ساده و ملموس جلو برود. شما هم قبل از استفاده از محیط های توسعه، کارهایی که در بخش‌های قبل گفته شد را یک دور تمرین کنید، مثلا کامپایل کردن برنامه و اجرا کردن آن در محیط کنسول. به این ترتیب می‌توانید درک خوبی از کارهایی که این محیط‌ها در پس زمینه و به صورت خودکار انجام می دهند داشته باشید.</p>
+<h1 id="_3">انواع داده</h1>
+<p>در این بخش در مورد متغیرها و انواع اولیه‌ی داده‌ها صحبت می‌کنیم.</p>
+<h2 id="_4">متغیرها</h2>
+<p>متغیر یک بخش از حافظه است که یک داده را ذخیره می‌کند. ما می‌توانیم در
+برنامه‌های خود، متغیرهای مختلفی را برای نگهداری داده‌هایی که برنامه‌ی ما با آن ها سروکار دارد تعریف کنیم. مثلا یک متغیر می تواند یک عدد اعشاری، یک عدد صحیح، یک کاراکتر و یا رشته‌ای از حروف را نگهداری کند.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">number1</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>به عنوان مثال در اینجا یک متغیر به نام number1 داریم که
+مقدار 45 در آن قرار گرفته است و از جنس عدد صحیح است.</p>
+<p>هر متغیر، <strong>نام</strong>، <strong>نوع</strong> و <strong>مقدار</strong> دارد. در مثال فوق نام متغیر <code>number1</code> و نوع
+آن <code>int</code> یا عدد صحیح و مقدار آن برابر 45 است.</p>
+<p>ما می‌توانیم در زمان تعریف متغیر یا بعد از آن، به متغیر مقدار دهیم.</p>
+<p>و در واقع نام هر متغیر با آدرس آن متغیر در حافظه نگاشت می‌شود به طوری
+که نام متغیر مشخص می‌کند آن متغیر در کجای حافظه ذخیره می‌شود.</p>
+<h4 id="primitive-data-types">انواع اولیه متغیرها (Primitive Data Types)</h4>
+<p>نوع متغیر محدودهٔ آن را نیز مشخص می کند، مثلا زمانی که می گوییم متغیر از نوع عدد صحیح است یعنی یک عدد صحیح بین <code>31^2-</code> و <code>1-31^2+</code> 
+را نگهداری می‌کند.</p>
+<p>در زبان جاوا برخلاف برخی بسیاری‌ از زبان‌های دیگر مانند C و C++ محدوده‌ی هر نوع داده کاملا مشخص است و این بازه به ویژگی‌های محیط مانند کامپایلر یا سیستم‌عامل و سخت افزار وابسته نیست.
+این تمهیدی هست که طراحان زبان جاوا برای حفظ ویژگی مستقل از سکو (Platform Independence) بودن زبان اندیشیده‌اند.</p>
+<p>انواع اولیه داده در زبان جاوا این‌ها هستند:</p>
+<ul>
+<li>
+<p>اعداد صحیح: این اعداد را وابسته به اندازه از کوچک به بزرگ می‌توان
+    در متغیرهایی با نوع داده‌ی short ،int ،long و byte ذخیره کرد.</p>
+</li>
+<li>
+<p>کارکتر: داده هایی از جنس حروف را می توان در این نوع ذخیره کرد که با char نشان داده می شود.</p>
+</li>
+<li>
+<p>اعداد اعشاری: این اعداد را می توان در انواع float
+    و double ذخیره کرد که نوع دوم بازه و دقت بیشتری را
+    نگهداری می‌کند. این مقادیر با استاندارد ممیز شناور IEEE 754 نگه‌داری می‌شوند.</p>
+</li>
+<li>
+<p>مقادیر منطقی (درست/غلط) : این متغیرها با boolean
+    نشان داده می شوند و تنها مقدار درست یا غلط را می‌توانند نگهداری
+    کنند.</p>
+</li>
+</ul>
+<p>جدول زیر نشان می‌دهد که هر نوع داده اولیه در چه حجمی از حافظه قابل ذخیره‌سازی است و چه بازه‌ای از مقادیر را در بر می‌گیرد.</p>
+<p><img alt="" src="../images/chapter2/image26.png" /></p>
+<p>مثلا نوع کاراکتر در دو بایت یا ۱۶ بیت قابل دخیره‌سازی است.</p>
+<h2 id="literal">مقادیر ثابت (Literal)</h2>
+<p>مقادیر ثابت یا literalها به مقادیری می‌گوییم که در سورس برنامه به طور مستقیم وارد می‌کنیم و قابل انتساب به متغیرها هستند.</p>
+<p>در مثال زیر عدد 12 و یا مقدار true هر دو ثابت‌هایی هستند که به متغیرها (بسته به نوع متغیرها) نسبت داده شد‌ه‌اند.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">byte</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kt">short</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1232</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">190823</span><span class="p">;</span>
+<span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1233</span><span class="p">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">293847298347L</span><span class="p">;</span>
+
+<span class="kt">boolean</span> <span class="n">e</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>لیترال‌های صحیح، به صورت پیش‌فرض int هستند اما برای لیترال‌های عددی طولانی که در ۳۲ بیت جا نمی‌گیرند و long هستند، از L در انتهای آن‌ها استفاده می‌کنیم تا تصریح شود این یک عدد صحیح ۶۴بیتی (long) است. </p>
+<p>برای نوع boolean، لیترال‌ها فقط true و false هستند.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;4&#39;</span><span class="p">;</span>
+
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mf">4763.129837D</span><span class="p">;</span>
+
+<span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">12.23F</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>برای نشان لیترالی از نوع کاراکتر مانند  بالا  از کوتیشن  استفاده می کنیم.</p>
+<p>در مورد اعداد اعشاری اگر می خواهیم تصریح کنیم که عدد ما</p>
+<p>float و یا double است کافیست F یا D آخر آن قرار دهیم.</p>
+<p>و اگر چیزی بعد از اعداد اعشاری قرار ندهیم به صورت پیش فرض
+double در نظر گرفته می شوند.</p>
+<p>نوع لیترال رشته (String) را در فصل آینده خواهیم دید.</p>
+<h2 id="operators">عملگرها (Operators)</h2>
+<p>عملگرها، عملی بر روی مقادیر و یا متغیر‌ها انجام می‌دهند.</p>
+<p>مثال:</p>
+<ul>
+<li>عملگر انتساب (مقداردهی یا assignment): این عملگر یک مقدار لیترال یا مقدار یک متغیر را به متغیر دیگری نسبت می‌دهد. </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div>
+
+
+<ul>
+<li>عملگر جمع یا ضرب</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">12</span> <span class="p">;</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="p">;</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">pi</span> <span class="p">;</span>
+</code></pre></div>
+
+
+<p>سایر عملگرها را در جدول زیر مشاهده می کنید. عملگرد درصد
+نشان دهنده باقیمانده تقسیم دو عدد بر هم است.</p>
+<p><img alt="" src="../images/chapter2/image27.png" /></p>
+<ul>
+<li><strong>نکته</strong>: در تقسیم دو عدد صحیح، حاصل تقسیم، مقدار خارج قسمت خواهد بود و بخش اعشاری محاسبه نمی‌شود.</li>
+</ul>
+<p>در نتیجه اگر شما دستور زیر را در برنامه جاوا اجرا کنید خروجی 1 خواهد بود و نه 1.5.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div>
+
+
+<p>به همین ترتیب اگر متغیرهایی از نوع صحیح تعریف کنید و سپس نتیجه‌ی تقسیم
+را حتی در عددی اعشاری بریزید به این علت که تقسیم از نوع صحیح انجام می‌گیرد مقدار اعشار محاسبه و نگهداری نخواهد شد.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="n">c</span><span class="p">;</span> <span class="c1">// 1.0</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="kt">short</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">long</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="n">c</span><span class="p">;</span> <span class="c1">// 1.0</span>
+</code></pre></div>
+
+
+<p>اما اگر حداقل یک طرف تقسیم اعشاری باشد، خروجی به شکل اعشاری محاسبه می‌شود.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">3.0</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>   <span class="c1">// 1.5</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mf">2.0</span><span class="p">);</span>   <span class="c1">// 1.5</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">);</span> <span class="c1">// 1.5</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="n">c</span><span class="p">;</span> <span class="c1">// 1.5</span>
+</code></pre></div>
+
+
+<h2 id="operator-precedence">اولویت عملگرها (Operator Precedence)</h2>
+<p>برخی از عملگرها اولویت بیشتری نسبت به بقیه دارند و در انجام محاسبات زود‌تر محاسبه می‌شوند.</p>
+<p>اولویت عملگر‌ها را در جدول زیر مشاهده می‌کنید.</p>
+<p>برای مثال اولویت تقسیم و باقیمانده و ضرب از جمع و تفریق بیشتر است.</p>
+<p><img alt="" src="../images/chapter2/image28.png" /></p>
+<p>اولویت عملگرها چیز جدید و غریبه‌ای نیست، حتما همه ما در ریاضیات با آن مواجه شده‌ایم. برای مثال وقتی بخواهیم خودمان <code>3*2+1</code> را حساب کنیم، ابتدا ضرب را انجام می‌دهیم چون اولویت بالاتری دارد و سپس حاصل ضرب را با ۱ جمع می‌کنیم. اولویت عملگرها در جاوا نیز به همین معنا و ترتیب است.</p>
+<p>همچنین در صورتی که در یک عبارت ریاضی چند عملگر از یک دسته حضور داشته
+باشند، ترتیب اجرا از چپ به راست خواهد بود.</p>
+<ul>
+<li><strong>مثال</strong>: در عبارت زیر مقدار متغیر number چند خواهد
+  بود؟</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div>
+
+
+<ul>
+<li>پاسخ: عملگرهای مختلفی در این عبارت استفاده شده است، چون ضرب و تقسیم دارای اولویت بیشتری هستند، اول اینها انجام می شوند و از چپ به راست پس ابتدا 12 تولید می شود، سپس تقسیم بر دو شده و 6 می شود و در نهایت 8.</li>
+</ul>
+<p>البته همیشه توصیه می شود از عبارت هایی مانند مثال فوق پرهیز کنیم و برای
+حذف ابهام از کدهایی که می نویسیم از پرانتزگذاری استفاده نماییم. تا خودمان
+و نیز دیگران در خواندن کد کمتر به اشتباه بیفتیم. عبارت بالا پس از
+پرانتز گذاری به صورت زیر خواهد بود:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+
+
+<ul>
+<li><strong>تمرین</strong>: عبارت زیر با چه ترتیبی اجرا خواهد شد؟</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">Z</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span><span class="n">r</span> <span class="o">%</span> <span class="n">q</span> <span class="o">+</span> <span class="n">w</span> <span class="o">/</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>پاسخ:</p>
+<p><img alt="" src="../images/chapter2/image29.png" /></p>
+<p>عملگرهای مقایسه ای</p>
+<p>عملگرهای مقایسه ای در جاوا، به همراه معدل عبارت ریاضی آنها و نیز مثالی
+برای هر یک در زیر آورده شده است:</p>
+<p><img alt="" src="../images/chapter2/image30.png" /></p>
+<p>شرکت پذیری عملگرها</p>
+<p>وقتی دو عملگر با اولویت یکسان در یک عبارت قرار می گیرند، ارزیابی عبارت
+با توجه به خاصیت شرکت پذیری عملگرها صورت می پذیرد، شرکت پذیری بعضی از
+عملگرها از چپ به راست است و بعضی از عملگرها از راست به چپ. مثلا در عبارت
+زیر:</p>
+<p>X=y=z=17</p>
+<p>به علت اینکه شرکت پذیری عملگر مقداردهی از راست به چپ است این عبارت به
+صورت زیر اجرا می شود:</p>
+<p>x = (y = (z = 17))</p>
+<p>اما در عبارت:</p>
+<p>72 / 2 / 3  </p>
+<p>از آنجایی که شرکت پذیری عملگر تقسیم از چپ به راست است، عبارت به صورت
+زیر اجرا می شود، یعنی ابتدا 72 به 2 تقسیم می شود و سپس نتیجه به 3 تقسیم
+خواهد شد:</p>
+<ol>
+<li>2) / 3  </li>
+</ol>
+<p>شرکت پذیری اغلب عملگرها از چپ به راست است و مهم ترین استثنا در این
+زمینه عملگر مقداردهی است.</p>
+<ul>
+<li>عملگرهای تک عملوندی</li>
+</ul>
+<p>برخی عملگرها، تک عملوندی هستند مانند عملگرهای زیر:</p>
+<p>A++;</p>
+<p>--a;</p>
+<p>این عملگرها می توانند سمت راست یا چپ یک متغیر قرار بگیرند،
+مثلا a++ یعنی یک مقدار به مقدار] a [اضافه شود.
+البته تفاوتی بین عملگری که سمت راست متغیر قرار می گیرد و عملگری که سمت
+چپ متغیر قرار می گیرد وجود دارد، مثلا در کد زیر:</p>
+<p>int a = 12;</p>
+<p>int b = --a;</p>
+<p>b = a--;</p>
+<p>b = a++;</p>
+<p>b = ++a;</p>
+<p>در خط اول b=--a [یعنی اول یکی از مقدار] a [کم
+شود و سپس مقدار آن (یعنی 11) داخل متغیر b ریخته شود. اما در
+خط دوم ابتدا مقدار a یعنی 11 داخل] b [ریخته می
+شود و سپس مقدار آن یکی کم می شود (می شود 10)، در خط سوم به همان ترتیب
+ابتدا مقدار a یعنی 10 داخل] b [ریخته می شود و
+سپس مقدار a یکی اضافه شده و به 11 تغییر پیدا می کند و
+نهایتا در سطر آخر ابتدا به مقدار a یکی اضافه شده (12 می
+شود) و سپس مقدار 12 داخل b ریخته می شود.]</p>
+<p>عملگرهای تک عملوندی دیگری هم وجود دارند که مثل یک منها که قبل از یک
+متغیر قرار می گیرد و مقدار آن را منفی می کند (در منفی یک ضرب می کند) و
+یا یک مثبت که اثر خاصی ندارد.</p>
+<p>مثال: برای مثال هنگام اجرای عبارت زیر ابتدا مقدار a [یک
+واحد اضافه می شود و سپس مقدار اضافه شده برای محاسبه ی عبارت استفاده می
+گردد:</p>
+<p>b = ++a - -a;</p>
+<p>مثلا اگر مقدار a [در این عبارت 1 باشد ابتدا تبدیل به 2 می
+شود سپس عبارت 2 -- (-2) محاسبه می شود.]</p>
+<p>برخی اپراتورهای یکانی نیز مربوط به نوع Boolean [هستند مانند
+نقیض، برای مثال در عبارت زیر متغیر f مقدار]
+false خواهد گرفت:</p>
+<p><strong>boolean t = true;</strong></p>
+<p><strong>f = !t;</strong></p>
+<p>یا در عبارت f= ! (f==t) [با توجه به اینکه نتیجه ی مقایسه
+منفی است مقدار f برابر] true [خواهد
+شد.</p>
+<p>عملگرهای منطقی</p>
+<p>عملگرهای منطقی هم برای نوع Boolean [وجود دارد، مهم ترین
+آنها عملگر نقیض (!) هست که با هم دیدیم و تک عملوندی بود،
+دیگر عملگرها در این نوع داده عملگرهای and و] or
+هستند که به ترتیب با &amp;&amp; [و] || [نمایش داده می
+شوند. همان طور که می دانید در and دو عبارت نتیجه تنها در
+صورت درست بودن هر دو عملوند درست خواهد بود اما در or دو
+عبارت درست بودن حداقل یکی از عبارات برای درستی نتیجه کفایت می
+کند.</p>
+<p>مثال:</p>
+<p><img alt="" src="../images/chapter2/image31.png" /></p>
+<p>همان طور که می بینید اولویت شرکت پذیری and [از]
+or بیشتر هست. البته تاکید می کنیم که بهتر است هنگام ترکیب کردن عملگرها
+از پرانتز استفاده کنید تا ابهام کد کمتر شود.</p>
+<p>عملگرهای ترکیبی</p>
+<p>اگر اولین عملوند در سمت راست مقدار دهی همان عملوند سمت چپ باشد، می توان
+آنها را به صورت زیر خلاصه نمود:</p>
+<p><img alt="" src="../images/chapter2/image32.png" /></p>
+<p>عملگر سه عملوندی</p>
+<p>یک عملگر سه عملوندی هم در زبان جاوا وجود دارد که به صورت زیر می توان از
+آن استفاده کرد:</p>
+<p>TYPE value = CONDITION ? Val_True : Val_False;</p>
+<p>این عملگر از یک شرط، یک علامت سوال، یک مقدار، دو نقطه و یک مقدار دیگر
+تشکیل شده است، و به این صورت عمل می کند که اگر شرط آن درست باشد مقدار
+اول مورد استفاده قرار خواهد گرفت، در غیر این صورت مقدار دوم استفاده می
+شود.</p>
+<p>مثال:</p>
+<p><img alt="" src="../images/chapter2/image33.png" /></p>
+<p>در این مثال در صورتی که شرط ما یعنی area > 10 [درست باشد،
+مقدار value برابر با یک خواهد شد و در غیر این صورت برابر با
+-1 خواهد شد، پس این اپراتور سه عملوند دارد، عملوند اول یک شرط است، سپس
+علامت سوال قرار می گیرد، عملوند دوم یک مقدار است که در صورت صحیح بودن
+مقدار شرط مورد استفاده قرار می گیرد، بعد از آن یک دو نقطه و در نهایت
+عملوند سوم که مقداری است که در صورت نادرست بودن شرط مورد استفاده قرار می
+گیرد. در واقع این عبارت دقیقا مثل تکه کد زیر عمل خواهد کرد و در نتیجه ی
+هر دو عبارت value برابر یک خواهد بود چرا که]
+area بزرگتر از 10 هست:</p>
+<p>جمع بندی</p>
+<p>در جداول زیر خلاصه ای از عملگرهایی که مرور کردیم به همراه نحوه ی شرکت
+پذیری آن ها برای جمع بندی آمده است:</p>
+<p><img alt="" src="../images/chapter2/image34.png" /></p>
+<p><img alt="" src="../images/chapter2/image35.png" /></p>
+<p>چاپ خروجی</p>
+<p>ما می توانیم از print [و یا] println [برای چاپ
+خروجی استفاده کنیم، البته قبلا از println استفاده کردیم و
+اینجا تنها مرور می کنیم، متد System.out.println() به ما کمک
+می کند که یک متغیر، یک مقدار و یا نتیجه ی یک عبارت را چاپ
+کنیم.</p>
+<p>مثال:</p>
+<ul>
+<li>
+<p>System.<em>out.println(a);</em></p>
+</li>
+<li>
+<p>System.<em>out.print(x);</em></p>
+</li>
+<li>
+<p>System.<em>out.println(2+5*a);</em></p>
+</li>
+</ul>
+<p>به کنسول اصطلاحا خروجی استاندارد (Standard
+output) [گفته می شود. اولین برنامه ای که قبلا با هم نوشتیم
+هم همین کار را می کرد و رشته ی سلام را توسط متد println رو
+کنسول چاپ می نمود.</p>
+<p>کویز</p>
+<p>برای مرور مطالبی که با هم دیدیم دو سوال خواهیم داشت، هر سوال را ابتدا
+با دقت حل کنید و سپس پاسخ خود را با پاسخی که در ادامه ی هر سوال آمده است
+چک کنید:</p>
+<ul>
+<li>نتیجه ی اجرای این برنامه چیست؟</li>
+</ul>
+<p><strong>int a;</strong></p>
+<p>a = 12;</p>
+<p>a+= 2;</p>
+<p><strong>int b;</strong></p>
+<p>b = 4;</p>
+<p>b++;</p>
+<p>b = a*b;</p>
+<p>System.<em>out.println(b);</em></p>
+<p>پاسخ: عدد 70</p>
+<ul>
+<li>خروجی این قطعه برنامه چیست؟</li>
+</ul>
+<p><strong>double x;</strong></p>
+<p>x = 5 / 2;</p>
+<p>System.<em>out.println(x);</em></p>
+<p>x = 7 + 3 * 6 / 2 - 1;</p>
+<p>System.<em>out.println(x);</em></p>
+<p>x = 2 % 2 + 2 * 2 - 2 / 2;</p>
+<p>System.<em>out.println(x);</em></p>
+<p>x = (3 * 9 * (3 + (9 * 3 / (3))));</p>
+<p>System.<em>out.println(x);</em></p>
+<p>پاسخ:</p>
+<p>2.0</p>
+<p>15.0</p>
+<p>3.0</p>
+<p>324.0</p>
+<p>تمرین عملی</p>
+<p>در این بخش به محیط اکلیپس برمی گردیم و مفاهیم و دستوراتی که تا اینجا
+یاد گرفتیم را مرور می کنیم، این برنامه ای هست که قبلا نوشتیم و حالا می
+خواهیم با افزودن متغیرها کمی تمرین کنیم:</p>
+<p><img alt="" src="../images/chapter2/image36.png" /></p>
+<p>از اینجا شروع کنیم که چگونه می توان یک متغیر را تعریف کرد، همان طور که
+دیدیم برای این کار باید ابتدا نوع و سپس نام متغیر را مشخص
+کنیم:</p>
+<p><img alt="" src="../images/chapter2/image37.png" /></p>
+<p>پس از آن می توانیم به آن مقداردهی کنیم:</p>
+<p><img alt="" src="../images/chapter2/image38.png" /></p>
+<p>انواع دیگری هم وجود دارد مثل نوع کاراکتر که می تواند مساوی
+\'a\' یا \'1\' [و یا حتی] \'#\' [باشد، در واقع
+هر کاراکتر تعریف شده ای می تواند در متغیری از نوع کاراکتر قرار بگیرد به
+این شرط که در دو طرف آن از کوتیشن استفاده کنیم:</p>
+<p><img alt="" src="../images/chapter2/image39.png" /></p>
+<p>و انواع دیگر، همان طور که دیدید نوع byte [برای ذخیره سازی
+اعداد کوچک که در 8 بیت جای می گیرند وجود دارد، نوع short
+برای اعداد دو بایتی وجود دارد، و انواع دیگری مانند اعداد اعشاری از
+نوع float که آنها را با] f [می توان مشخص کرد و
+نوع double برای ذخیره اعداد اعشاری با دقت و بازه ی
+بیشتر:</p>
+<p><img alt="" src="../images/chapter2/image40.png" /></p>
+<p>انواع مختلف اعداد را دیدیم، یک نوع دیگر به نام Boolean [ هم
+وجود دارد که برای ذخیره مقادیر درست یا نادرست به کار می
+روند:</p>
+<p><img alt="" src="../images/chapter2/image41.png" /></p>
+<p>حال می خواهیم ببینیم چگونه می توانیم با اپراتورها کار کنیم، برای
+مثال:</p>
+<p><img alt="" src="../images/chapter2/image42.png" /></p>
+<p>و همان طور که صحبت شد باید توجه کنید که در صورتی که عملوندهای تقسیم
+اعداد و یا متغیرهای صحیح باشند خارج قسمت تقسیم برگردانده می شود و قسمت
+اعشاری نادیده گرفته می شود، برای مثال اگر شما 15 را تقسیم
+بر 2 کنید و در] number [قرار دهید، وقتی که این
+متغیر را چاپ می کنید با مقدار 7 مواجه می شوید و نه
+7.5:</p>
+<p><img alt="" src="../images/chapter2/image43.png" /></p>
+<p>اما در صورتی که یکی از عملوندها و نیز متغیری که نتیجه را در آن ذخیره می
+کنیم از جنس اعشاری می بودند نتیجه نیز اعشاری می شد:</p>
+<p><img alt="" src="../images/chapter2/image44.png" /></p>
+<p>عملگرهای دیگری هم وجود دارند، مثلا عملگر باقی مانده که باقی مانده تقسیم
+را مشخص می کند:</p>
+<p><img alt="" src="../images/chapter2/image45.png" /></p>
+<p>و نکته ی دیگر بحث اولویت بین اپراتورها و عملگرها هست که باید به آن دقت
+کنیم، مثلا در عبارت 1 + 2 * 3 آیا ابتدا جمع انجام می شود
+یا ضرب؟ به چه ترتیب؟ از راست به چپ و یا چپ به راست؟</p>
+<p>واقعیت این است که از آنجایی که اولویت ضرب از جمع بیشتر است ابتدا عمل
+ضرب انجام خواهد شد و سپس نتیجه با 1 جمع می شود و حاصل برابر
+7 خواهد بود:</p>
+<p><img alt="" src="../images/chapter2/image46.png" /></p>
+<p>و اگر قصد داشتیم ابتدا جمع انجام شود، بایست از پرانتز گذاری استفاده می
+کردیم، پرانتز گذاری اولویت ها را تنظیم می کند، با این کار
+ابتدا 1 + 2 انجام می شود و سپس حاصل در] 3 [ضرب
+می شود و خروجی متفاوت خواهد بود:</p>
+<p><img alt="" src="../images/chapter2/image47.png" /></p>
+<p>به همین ترتیب عملگر ++ [را دیدیم، در مثال زیر پس از انجام
+عملیات ++ مقدار] a [یک واحد افزوده خواهد
+شد:</p>
+<p><img alt="" src="../images/chapter2/image48.png" /></p>
+<p>نکته ی بعدی این هست که می توانیم از ++ [در سایر عملیات ها
+نیز استفاده کنیم، برای مثال اگر b = a++ قرار دهیم در صورتی
+که ++ را سمت راست عملوند] a [قرار دهیم ابتدا
+مقدار a یعنی] 1 [داخل] b [ریخته می
+شود و سپس به مقدار a یک واحد اضافه می شود، اما در صورتی
+که ++ را سمت چپ متغیر] a [قرار دهیم ابتدا به
+مقدار آن یکی افزوده شده و سپس مقدار جدید در متغیر b ذخیره
+خواهد شد:</p>
+<p><img alt="" src="../images/chapter2/image49.png" /></p>
+<p><img alt="" src="../images/chapter2/image50.png" /></p>
+<p>به عنوان خاتمه این بخش یادآوری می کنیم که متد println
+و print [متدهایی هستند که به ما کمک می کنند مقدار یک متغیر
+را در خروجی کنسول چاپ کنیم، اگر از prtinln استفاده کنیم
+مقدار مورد نظر چاپ شده و به خط بعد می رود اما اگر از prtint
+استفاده کنیم خط جدید ایجاد نمی شود، برای مشاهده این تفاوت به مثال زیر
+توجه کنید:</p>
+<p><img alt="" src="../images/chapter2/image51.png" />!(images/chapter2/image52.png)</p>
+<p>کنترل جریان برنامه</p>
+<ul>
+<li>شرط</li>
+</ul>
+<p>در این بخش با ساختارهای کنترل جریان برنامه آشنا می شویم، یعنی دستوراتی
+که به ما کمک می کنند جریان اجرای برنامه را از جایی به جای دیگری ببریم،
+ساده ترین راه برای این کار استفاده از دستورات شرطی یا
+if-else هستند، دستورات شرطی امکانی را فراهم می کنند که اگر مثلا \"شرط
+الف\" برقرار باشد یک کار انجام شود و اگر نه، اگر \"شرط ب\" برقرار باشد
+کار دیگری و الی آخر. به عنوان مثال به قطعه کد زیر توجه کنید:</p>
+<p><strong>if(x>y)</strong></p>
+<p><strong>System.<em>out.println(\"X is greater than Y\");</em></strong></p>
+<p><strong>else if(x==y)</strong></p>
+<p><strong>System.<em>out.println(\"X is equal to Y\");</em></strong></p>
+<p><strong>else</strong></p>
+<p><strong>System.<em>out.println(\"Y is greater than X\");</em></strong></p>
+<p>در این قطعه کد از ساختار شرطی if-else [استفاده می کنیم به
+این صورت که اگر x از] y [بزرگتر باشد عبارت اول
+چاپ خواهد شد، اگر برابر باشند عبارت دوم چاپ می شود و در نهایت اگر هیچ یک
+از این دو شرط برقرار نباشند که به این معناست که x
+از y [کوچکتر است، عبارت سوم چاپ خواهد شد. بنابراین ما
+ساختاری به نام if،] else if [و] else
+داریم.</p>
+<p>جلوی if [در داخل پرانتز بایست یک شرط قرار بگیرد، این شرط می
+تواند یک اپراتور مانند مقایسه ی x و] y [باشد
+مانند مثال قبل و یا یک متغیر Boolean باشد مانند مثال
+زیر:</p>
+<p><strong>boolean condition = x>y;</strong></p>
+<p><strong>if(condition)</strong></p>
+<p><strong>System.<em>out.println(\"X is greater than Y\");</em></strong></p>
+<p><strong>else</strong></p>
+<p><strong>System.<em>out.println("Y >= X\");</em></strong></p>
+<ul>
+<li>مفهوم بلوک</li>
+</ul>
+<p>فرض کنید بخواهیم در صورت برقرار بودن یک شرط به جای یک کار مجموعه ای از
+کارها را انجام دهیم یا در حالت برقرار نبودن شرط هم مجموعه ای از کارها
+انجام شود در این حالت چه باید کرد؟ در این حالت ما از ساختار بلوک استفاده
+می کنیم. در هر بلاک یک آکولاد شروع و یک آکولاد پایان بلاک را مشخص می کند
+و تمام دستوراتی که در بلاک هستند با همدیگر اجرا می شوند، به عبارت دیگر
+در مثال زیر اگر x>y باشد هر سه دستور قرار گرفته در
+بلاک if و در غیر این صورت هر سه دستور بلاک] else
+اجرا خواهند شد:</p>
+<p><strong>if(x>=y)</strong></p>
+<hr />
+<p><strong>else</strong></p>
+<hr />
+<p>در این حالت اگر از بلاک استفاده نکنیم تنها یک دستور پس از
+if در صورت درست بودن آن انجام خواهد شد. بلاک برای بخش های دیگری مانند
+ساختار حلقه ها هم کاربرد دارد که در ادامه به آنها خواهیم
+رسید.</p>
+<ul>
+<li>مرحوم go to</li>
+</ul>
+<p>برای کنترل جریان اجرای برنامه یک ساختار و دستور قدیمی به
+نام goto وجود دارد، این دستور در بسیاری از زبان های قدیمی
+موجود است و کمک می کند که اجرای برنامه از بخشی به بخش دیگری پرش بکند.
+اما این دستور، دستوری است که توصیه نمی شود زیرا برنامه را پیچیده و از
+حالت ساخت یافته خارج می کند، به همین خاطر دستور goto در
+جاوا یک کلمه ی رزو شده در نظر گرفته شده و استفاده از آن ممنوع شده است،
+در واقع جاوا با این کار می خواسته بگوید که من می دانم این دستور وجود
+دارد و چه می کند اما نمی خواهد اجازه دهم برنامه نویسان من با استفاده از
+آن برنامه ی خود را پیچیده و غیر ساخت یافته بکنند، پس از
+دستور goto نمی توانیم در زبان جاوا استفاده
+بکنیم.</p>
+<p>حلقه ها</p>
+<p><img alt="" src="../images/chapter2/image53.jpeg" />حلقه یا loop [امکانی هست برای
+اجرای چند باره ی یک یا چند دستور. وقتی که می خواهیم به تعداد مشخصی یا تا
+زمانی که یک شرط خاص برقرار نشده است، یک یا تعدادی دستور را اجرا کنیم، می
+توانیم از حلقه استفاده کنیم. در جاوا حلقه های زیر وجود
+دارند:</p>
+<ul>
+<li>
+<p>For</p>
+</li>
+<li>
+<p>While</p>
+</li>
+<li>
+<p>Do-while</p>
+</li>
+</ul>
+<p>و هر کدام به شکلی می توانند تکرار دستورات را انجام بدهند.</p>
+<p>while</p>
+<p><img alt="" src="../images/chapter2/image54.png" />ساختار این حلقه به شکل زیر است، ابتدا
+کلمه ی کلیدی while سپس داخل پرانتز شرط حلقه نوشته می شود و
+در ادامه چند دستور:</p>
+<p>تا وقتی که شرطی که جلوی while [هست] true [باشد
+بدنه ی آن اجرا می شود، بدنه ی حلقه می تواند مثل این حالت یک بلوک باشد یا
+یک دستور تکی باشد. خوب، به نظر شما در این مثال خروجی برنامه
+چیست؟</p>
+<p>پاسخ:</p>
+<p>چاپ اعداد 1 تا 9</p>
+<p>Do-while</p>
+<p><img alt="" src="../images/chapter2/image55.png" />این حلقه دقیقا مشابه while [هست با این
+تفاوت که شرط حلقه در انتهای آن چک می شود.</p>
+<p>این حلقه با عبارت کلیدی do [آغاز می شود و سپس بلوک دستورات
+قرار می گیرد و بعد از آن شرط حلقه داخل پرانتز جلوی کلمه ی
+کلیدی while قرار می گیرد. به نظر شما خروجی این برنامه
+چیست؟</p>
+<p>پاسخ:</p>
+<p>چاپ اعداد 1 تا 10. به این صورت که ابتدا counter=0 [است، سپس
+در هر بار اجرای بدنه ی حلقه یکی به مقدار آن اضافه می شود و سپس چاپ می
+شود و شرط حلقه چک می شود که آیا counter از 10 کمتر هست یا
+نه، در نتیجه زمانی که counter به مقدار 10 برسد ابتدا عدد 10
+هم چاپ می شود و چون دیگر شرط بدنه ی حلقه برقرار نبوده و از حلقه خارج
+خواهیم شد.</p>
+<p>For </p>
+<p>این حلقه پر استفاده ترین حلقه در زبان جاواست. حلقه ی for
+از سه بخش تشکیل شده است:</p>
+<p><img alt="" src="../images/chapter2/image56.png" /></p>
+<p>که بخش های آن با سمیکالن (;[) از یکدیگر جدا شده اند، بخش
+اول یک عملیات است، بخش دوم یک شرط و بخش سوم نیز یک عملیات است و در نهایت
+یک دستور و یا یک بلوک از دستورات قرار می گیرد.</p>
+<p><img alt="" src="../images/chapter2/image57.png" />مثلا:</p>
+<p>عملیات اول این است که یک متغیر به نام I [تعریف شود و مقدارش
+مساوی 1 قرار بگیرد، بعد از آن یک شرط مشخص می کنیم و می گوییم تا زمانی
+که i از] 10 [کمتر مساوی است بدنه ی حلقه ( در
+اینجا مقدار i) چاپ شود. بعد از اینکه بدنه ی حلقه اجرا شد،
+عملیات ثانویه ای که مشخص کرده ایم (i++) اجرا می
+شود.</p>
+<p>خروجی این برنامه چه خواهد بود؟</p>
+<p>پاسخ: چاپ اعداد 1 تا 10</p>
+<p>نکته: در بین برنامه نویسان جاوا رسم هست که وقتی می خواهند یک بلاک تعریف
+کنند، این بلاک را جلوی دستور آغاز می کنند و بعد در انتها می بندند، به
+جای اینکه یک خط جدید ایجاد شود و بعد بلاک باز شود، شروع بلاک دقیقا جلوی
+دستور حلقه و یا شرط قرار می گیرد. این یک رسم بین برنامه نویسان جاوا هست
+اما هیچ اجبار و یا قانونی در این باره وجود ندارد.</p>
+<p>بازنویسی for [با کمک] while</p>
+<p>ساختار حلقه ی for [را می توان با] while [هم
+پیاده سازی کرد، به مثال زیر توجه کنید:</p>
+<p><img alt="" src="../images/chapter2/image58.png" /></p>
+<p>در این مثال x [بخشی هست که در ابتدا باید انجام شود (مقدار
+دهی اولیه)، تا زمانی که y برقرار است بایست]
+body() و سپس بخش z [اجرا شود. این مثال شهود بهتری از نحوه ی
+اجرای حلقه ی for به دست می دهد.]</p>
+<p>مثال:</p>
+<p>به عنوان مثال حلقه ی for [که قبلا نوشته بودیم و اعداد 1 تا
+10 را چاپ می کرد با while بازنویسی کرده ایم:]</p>
+<p><img alt="" src="../images/chapter2/image59.png" /></p>
+<p>البته در موارد خاصی این دو ساختار با هم تفاوت هایی دارند، برای مثال
+زمانی که از دستوراتی مانند continue استفاده کنیم، که بعدا
+به آن خواهیم پرداخت.</p>
+<p>آشنایی اولیه با متدها</p>
+<p>\
+- <img alt="" src="../images/chapter2/image60.png" />متد]</p>
+<p>در این بخش با ساختار و مفهوم متد آشنا می شویم. متد مثل یک ماشین و یا یک
+دستگاه است که تعدادی ورودی دریافت می کند و بر روی آنها عملیاتی انجام می
+دهد و در نهایت یک خروجی ایجاد می کند. تعداد ورودی ها می تواند صفر یا
+بیشتر باشد و تعداد خروجی ها می تواند صفر یا یک باشد. در واقع می توانیم
+یک خروجی تولید کنیم و یا اصلا خروجی نداشته باشیم. ورودی های متد را
+اصطلاحا پارامترهای آن و خروجی آن را اصطلاحا مقدار برگشتی یا
+return value می گویند.</p>
+<p>با اسامی دیگری نیز از متد یاد می شود مانند تابع (function[)
+و یا روال یا رویه (procedure) که معمولا در زبان های دیگر
+استفاده می شوند و در زبان جاوا و سایر زبان های شی گرا معمولا به این
+مفهوم متد گفته می شود.</p>
+<p>مثال:</p>
+<p>مثال زیر یک متد را نشان می دهد که تعریف شده است تا دو ورودی را با هم
+جمع کند و مقدار مجموع آنها را برگرداند. پس ورودی های آن دو عدد هستند و
+خروجی نیز از جنس عدد خواهد بود.</p>
+<p><img alt="" src="../images/chapter2/image61.png" /></p>
+<p>همان طور که می بینید مقدار برگشتی این تابع از جنس double
+است، سپس اسم آن ذکر شده است، و در ادامه در پرانتز پارامترهای آن آمده
+اند. این متد یک بدنه دارد که با آکولاد شروع شده است و با آکولاد تمام شده
+است. در درون بدنه یک متغیر محلی تعریف شده است به نام result
+که مساوی مجموع این دو پارامتر قرار داده شده است و result
+برگردانده شده است. در واقع با استفاده از کلمه ی کلیدی
+Return ما می توانیم خروجی تابع را مشخص کنیم و برگردانیم.</p>
+<p><img alt="" src="../images/chapter2/image62.png" /></p>
+<p>بعد از اینکه متد به این شکل تعریف شد می توانیم از آن استفاده کنیم و
+اصطلاحا آن را فراخوانی کنیم. مثلا کد زیر بخشی از برنامه ما می تواند باشد
+که از متد تعریف شده استفاده می کند. در این تکه کد sum برابر
+با مقدار حاصل از فراخوانی متد add با پارامترهای]
+x و y [است. پس به این شکل می توانیم متد را فراخوانی و خروجی
+آن را دریافت کنیم.</p>
+<p><img alt="" src="../images/chapter2/image62.png" /></p>
+<p>خود println [نیز در واقع یک متد هست که می تواند یک ورودی
+بگیرد و آن را چاپ نماید.</p>
+<p>نکته: ممکن است متدی پارامتری نداشته باشد و ورودی های آن صفر
+باشند.</p>
+<p>نکته: همچنین ممکن است یک متد خروجی نداشته باشد و چیزی تولید نکند.
+(return value نداشته باشد) در چنین متدهایی که خروجی ندارند
+نوع خروجی را اصطلاحا از جنس void تعریف می کنیم. پس اگر
+خروجی متدی void  باشد یعنی خروجی خاصی تولید نمی کند. در این
+متدها از دستور return برای برگرداندن مقدار استفاده نمی
+کنیم. اما برای خاتمه دادن به اجرای متدی که چیزی برنمی گرداند می توانیم
+از دستور return استفاده کنیم.]</p>
+<p>به عنوان مثال در زیر متدی به نام simple [را می بینید که
+پارامتری ورودی نمی گیرد، و مقداری را نیز برنمی گرداند. پس مقدار خروجی آن
+را برابر void قرار می دهیم و در پرانتز جلوی نام متد ورودی
+به آن نمی دهیم.</p>
+<p><img alt="" src="../images/chapter2/image63.png" /></p>
+<p>مثال:</p>
+<p>برای فراخوانی متدها یک مثال دیگر را مرور می کنیم، در زیر یک کلاس کامل
+را می بینید، این کلاس با نام PrimeNumbers نام گذاری شده
+است، متد main دارد و همان طور که می دانید هنگام اجرای
+برنامه این متد اجرا می شود و دارای متدی به نام isPrime است.
+این متد یک پارامتر که یک عدد هست دریافت می کند و یک Boolean
+برمی گرداند که مشخص می کند آیا پارامتری که گرفته یک عدد اول است یا خیر،
+این تابع بدنه ی ساده ای دارد، ابتدا چک می کند اگر ورودی از 2 کوچکتر
+باشد false برمی گرداند یعنی پارامترش عدد اول نیست، وگرنه از
+2 شروع می کند و تا خود عدد یک به یک چک می کند که آیا عدد ما به شمارنده
+بخش پذیر هست یا نه، اگر بخش پذیر باشد مقدار false را همان
+جا برمی گرداند یعنی عددی که دریافت کرده است قطعا عدد اول نیست، اگر این
+حلقه به پایان برسد و هیچ گاه مقداری را Return نکند می
+توانیم در آخر می توانیم مقدار true را برگردانیم و مطمئن
+باشیم این عدد اول است چرا که به هیچ عددی بین 2 و خودش بخش پذیر نبوده
+است. به این دقت کنید که هر جا داخل متد دستور return اجرا
+شود، اجرای متد خاتمه پیدا می کند، برای همین لازم نیست برای خط اول متد
+از else استفاده کنیم زیرا اگر وارد آن شرط بشویم
+(اگر number از] 2 [کوچکتر باشد) دیگر اجرای تابع
+خاتمه پیدا خواهد کرد و نیازی به else بعد از این]
+if نیست.</p>
+<p>هنگامی که isPrime [به این شکل تعریف شد، می توانیم از آن در
+برنامه مان استفاده کنیم، مثلا برنامه ای در اینجا نوشتیم که از عدد 0 تا
+عدد 19 شمرده و اگر آن عددی که در حال شمارش آن هستیم عدد اول باشد آن را
+چاپ نموده ایم. پس این برنامه به صورت خلاصه اعداد اول در بازه 0 تا 19 را
+چاپ می کند.</p>
+<p>نکته: فعلا به خاطر داشته باشیم که هرجا متدی تعریف می کنیم در ابتدای
+تعریف آن از کلمه ی کلیدی static استفاده نماییم، دلیل این
+موضوع را بعدا مفصلا بررسی خواهیم کرد اما فعلا برای اینکه برنامه های ما
+به درستی اجرا شوند این کلمه را قبل از تعریف تمام متدها قرار می
+دهیم.</p>
+<p><img alt="" src="../images/chapter2/image64.png" /></p>
+<p>تمرین عملی</p>
+<p>در این بخش چند تمرین عملی انجام می دهیم در مورد مفاهیمی مانند شرط ها،
+حلقه ها و متدها. فرض کنید می خواهیم برنامه ای بنویسیم که شعاع دایره هایی
+را چاپ نماید که محیط آن ها از عدد مشخصی مثلا مانند 100 کمتر است. پس ما
+دنبال اعدادی هستیم که اگر شعاع دایره مساوی آنها قرار بگیرد، دایره ی ما
+محیطی کمتر از 100 خواهد داشت. شروع می کنیم به نوشتن برنامه، فرض کنید یک
+کلاس به نام BasicConcepts نوشته ایم و متد] main
+را نیز برای آن تعریف کرده ایم:</p>
+<p><img alt="" src="../images/chapter2/image65.png" /></p>
+<p>از آنجایی که این برنامه قرار است با محیط دایره ها کار کند، خوب است یک
+متد ایجاد کنیم برای محاسبه ی محیط دایره، برای مثال متدی با
+نام circumference ایجاد می کنیم که یک عدد صحیح به عنوان
+شعاع می گیرد و قرار است محیط را حساب کند، محیط دایره از جنس
+double و یا float [خواهد بود و همان طور که گفتیم فعلا ما
+فرض می کنیم که یک کلمه ی کلیدی static باید اول متدها قرار
+دهیم.</p>
+<p>در بدنه ی این متد یک متغیر محلی برای محاسبه ی محیط دایره به
+نام c تعریف می کنیم و محیط را بر اساس فرمول محاسبه و در آن
+ذخیره می کنیم. سپس این مقدار محاسبه شده را برمی گردانیم.</p>
+<p><img alt="" src="../images/chapter2/image66.png" /></p>
+<p>البته می توانستیم بدون تعریف متغیر دیگری از خود عبارت محاسبه ی محیط هم
+به صورت زیر استفاده کنیم:</p>
+<p><img alt="" src="../images/chapter2/image67.png" /></p>
+<p>حال ما می خواهیم شعاع هایی به صورت عدد صحیح را چاپ کنیم که محیط دایره ی
+آنها کمتر از 100 باشد. می توانیم یک حلقه ایجاد کنیم که در آن یکی یکی
+شعاع های مختلف را در نظر بگیریم و محیط آنها را محاسبه کنیم و اگر کمتر از
+100 بود آن را چاپ کنیم. این کد را با حلقه ی do-while پیاده
+سازی می کنیم.</p>
+<p>یک متغیر به عنوان شعاع (r[) در نظر می گیریم و هر دفعه یکی
+به مقدار آن اضافه می کنیم، این متغیر را در بیرون از حلقه تعریف و با 0
+مقدار دهی اولیه می کنیم. سپس در حلقه هر بار محیط را با فراخوانی تابعی که
+نوشتیم حساب کرده و چک می کنیم اگر محیطی که حساب کرده ایم از 100 کمتر
+باشد شعاع دایره را چاپ می کنیم وگرنه از این حلقه خارج می شویم، پس شرط
+حلقه ی ما نیز این خواهد بود که محیط دایره کمتر از 100 باشد.</p>
+<p>برای اینکه بتوانیم از متغیر محلی c [در داخل و نیز در شرط
+حلقه استفاده کنیم باید آن را خارج و قبل از حلقه تعریف کرده
+باشیم.</p>
+<p><img alt="" src="../images/chapter2/image68.png" /></p>
+<p>پس این برنامه هر بار شعاع دایره را یکی اضافه می کند، محیط دایره را
+محاسبه می کند، اگر محیط دایره از 100 کمتر باشد، شعاع دایره را چاپ می کند
+و این کار رو تا زمانی ادامه می دهد که محیط دایره از 100 کوچکتر باشد.
+حاصل اجرای این برنامه را در زیر مشاهده می کنید:</p>
+<p><img alt="" src="../images/chapter2/image69.png" /></p>
+<p>برای امتحان درستی نتیجه کافیست محیط دایره ای با شعاع 16 را محاسبه
+کنید.</p>
+<p><img alt="" src="../images/chapter2/image70.png" /></p>
+<p>و همان طور که خواهید دید این محیط از 100 بیشتر خواهد شد. پس اعداد 1 تا
+15 باید چاپ می شدند و برنامه به درستی اجرا شده است.</p>
+<p>در این تمرین ما روی مفهوم متد، تعریف و فراخوانی آن، تعریف و استفاده از
+متغیرها، مفهوم حلقه و مفهوم شرط تمرکز کردیم.</p>
+<p>نکته: در جاوا و در بین برنامه نویسان جاوا رسم هست که اسم کلاس با حرف
+بزرگ شروع می شود و اگر چند کلمه در اسم وجود دارد هر کلمه با حرف بزرگ
+شروع می شود مثلا در این مثال: BasicConcepts با]
+B و C [بزرگ.]</p>
+<p>نکته: در مورد متدها، معمولا نام متدها را با حرف کوچک شروع می کنیم، و
+اگر نام متد چند کلمه ای باشد کلمات بعدی را با حرف بزرگ شروع می کنیم
+مثلا: CircumferenceCircle  ]</p>
+<p>نکته: و نیز اسم متغیرها معمولا با حرف کوچک شروع می شود.</p>
+<p>اینها قواعدی هستند که معمولا برنامه نویسان رعایت می کنند و یک عرف بین
+برنامه نویسان جاوا هست. همیشه وقتی اسمی که انتخاب می کنید چند کلمه ای
+هست، هر کلمه که به این اسم اضافه می شود با حرف بزرگ شروع می شود و در
+مورد کلاس ها حرف اول هم بزرگ است اما در مورد متغیرها و متدها حرف اول
+کوچک خواهد بود.</p>
+<p>تمرین دوم: فرض کنید بخواهیم برنامه ای بنویسیم که محیط دایره هایی که
+شعاع آنها از 1 تا 10 هست را چاپ نماید. این بار بهتر است به جای حلقه
+ی do-while از یک حلقه ی] for [استفاده کنیم چون
+تعداد تکرارها مشخص است. پس به جای حلقه ی مثال قبل یک for می
+نویسیم که از 1 تا 10 هر بار یکی به شعاع اضافه می کند و در هر مرحله پس از
+محاسبه ی شعاع، آن را چاپ می نماید.</p>
+<p><img alt="" src="../images/chapter2/image71.png" /></p>
+<p>شما می توانید برنامه را تغییر دهید و حالت های مختلفی را امتحان
+کنید.</p>
+<p>نکته: در بین برنامه نویسان جاوا رسم است که آکولاد را بلافاصله بعد از
+دستور حلقه و یا شرط قرار می دهند. در حالی که برخی از برنامه نویسان در
+زبان های دیگر آکولاد را در خط جدیدی تعریف می کنند.</p>
+<p>نکته: در این کد از بلاک برای نوشتن بدنه ی حلقه استفاده کردیم زیرا بیش
+از یک دستور درون حلقه وجود داشت و لازم بود هر دو دستور در هر بار اجرای
+حلقه اجرا شوند. البته این برنامه را می توان ساده تر هم نوشت، می توان به
+جای تعریف کردن یک متغیر یک راست محیط را محاسبه و چاپ نمود، در آن صورت
+چون بدنه ی حلقه ی ما یک دستور بیشتر ندارد، نیازی به تعریف بلاک نخواهیم
+داشت و می توانیم آکولادها را برداریم.</p>
+<p><img alt="" src="../images/chapter2/image72.png" /></p>
+<p>جمع بندی</p>
+<p>در انتها به جمع بندی مطالبی می پردازیم که در این جلسه
+دیدیم.</p>
+<ul>
+<li>
+<p>در این جلسه ما در مورد محیط های توسعه یا IDE [ها صحبت
+    کردیم و به صورت خاص کمی با Eclipse آشنا شدیم و با آن
+    کار کردیم.</p>
+</li>
+<li>
+<p>در مورد انواع داده اولیه یا Primitive Data Types [در
+    جاوا صحبت کردیم و دیدیم چطور می توان متغیرهایی از این انواع
+    ساخت.</p>
+</li>
+<li>
+<p>دیدیم چطور می توانیم با کمک عملگرها روی متغیرها عملیات ها و کارهایی
+    را انجام دهیم. در مورد اولویت و شرکت پذیری عملگرها صحبت
+    کردیم.</p>
+</li>
+<li>
+<p>و با مفاهیمی مانند شرط ها، حلقه ها و متدها آشنا شدیم.</p>
+</li>
+</ul>
+<p>مطالعه کنید</p>
+<p>برای تکمیل این موضوعات و تکمیل دانش خودتان در مورد آنها پیشنهاد می کنیم
+که به مطالعه ی فصل اول، دوم، چهارم و پنجم کتاب دایتل بپردازید که به
+مطالبی که در این جلسه دیدیم مرتبط هستند.</p>
+<p><img alt="" src="../images/chapter2/image73.jpeg" />Java How to Program   (Deitel &amp; Deitel)</p>
+<p>1- Introduction</p>
+<p>2- Introduction to Java Applications</p>
+<p>4- Control Statements: Part 1</p>
+<p>5- Control Statements: Part 2</p>
+<p>و همین طور تمریناتی که در این فصل ها از کتاب گفته شده است را خوب است که
+انجام دهید.</p>
+<p>همچنین اگر خودتان از کتاب فارسی و یا انگلیسی دیگری استفاده می کنید می
+توانید این مباحث را در آنها دنبال کرده و مطالعه کنید.</p>
+<p>تمرین [ ] </p>
+<p><img alt="" src="../images/chapter2/image74.jpeg" />در کنار خواندن کتاب، خیلی خوب است که
+تمرین بکنید و در واقع تمرین عملی خیلی خیلی مهم است برای برنامه نویسی.
+حتی اگر فکر می کنید تمام مطالبی که گفته شد را خوب فهمیدید و یا اگر کتاب
+را خواندید و مطالب را خوب متوجه شدید باز هم خیلی مهم است که تمرین بکنید
+چرا که هیچ کسی با خواندن کتاب و یا دیدن جلسات آموزشی برنامه نویس نمی شود
+و باید در عمل این مفاهیم را تمرین کنید تا برایتان جا بیافتد و در عمل هست
+که به برخی مشکلات برمی خورید و دانش شما عمق بیشتری پیدا می کند. پس حتما
+به مطالعه و تمرین بپردازید.</p>
+<ul>
+<li>تمرین های عملی</li>
+</ul>
+<p>در مورد تمام تمرین هایی که گفته شده است هم متد را پیاده سازی کنید و هم
+برنامه ای بنویسید که آن را فراخوانی و از آن استفاده کند.</p>
+<ol>
+<li>
+<p>برنامه‌ای بنويسيد که دنباله فيبوناچی را تا اعداد کوچکتر از 1000 چاپ
+    کند</p>
+<ul>
+<li>
+<p>در صورت امکان به صورت بازگشتی (recursive[)</p>
+<p>پیاده‌سازی کنید. (متدی بازگشتی است که درون خودش خودش را فراخوانی</p>
+<p>کند)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>متدی بنويسيد که مشخص کند پارامترش يک عدد «از دو سر مساوی»
+    (palindrome) است يا خير]</p>
+<ul>
+<li>
+<p>يعنی عددی که اگر از انتها بخوانيمش، با خودش مساوی</p>
+<p>شود</p>
+</li>
+<li>
+<p>مثلاً palindrome(1221) [مقدار] true</p>
+<p>و palindrome(122) [مقدار] false [</p>
+<p>برمی‌گرداند</p>
+</li>
+</ul>
+</li>
+<li>
+<p>متدی بنويسيد که مشخص کند آيا پارامترش توانی از دو است؟</p>
+<ul>
+<li>
+<p>مثلاً 1 و 2و 8 و 64 توانی از دو هستند، ولی 3 و 6</p>
+<p>نيستند</p>
+</li>
+</ul>
+</li>
+<li>
+<p>برنامه‌ای بنويسید که کارکترهای 'a' [تا] 'z'</p>
+</li>
+</ol>
+<blockquote>
+<p>را یک‌درميان چاپ کند
+​    </p>
+<ol>
+<li>متدی بنويسيد که پارامترش شعاع دايره است و مقدار برگشتی آن مساحت</li>
+</ol>
+<p>دايره.
+​  <br />
+6.  تابعی بنويسيد که با کمک کاراکتر ستاره (*[) يک مثلث
+    &gt; متساوی الساقين با قاعده‌ای عمودی رسم کند.</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="o">-</span>   <span class="err">اندازه</span> <span class="err">قاعده</span> <span class="err">به</span> <span class="err">عنوان</span> <span class="err">پارامتر</span> <span class="err">دريافت</span> <span class="err">شود</span><span class="p">.</span>
+
+<span class="o">-</span>   <span class="err">مثلاً</span> <span class="err">با</span> <span class="err">پارامتر</span> <span class="mi">5</span><span class="err">،</span> <span class="err">اين</span> <span class="err">ساختار</span> <span class="err">را</span> <span class="err">چاپ</span> <span class="err">کند</span><span class="p">:</span>
+</code></pre></div>
+
+
+<blockquote>
+<p>*</p>
+<p>***</p>
+<p>*****</p>
+<p>***</p>
+<p>*</p>
+</blockquote>
+<ol>
+<li>
+<p>متدی بنويسيد که فاکتوريل پارامترش را برگرداند.</p>
+<ul>
+<li>
+<p>هم به صورت حلقه‌ای و هم به صورت بازگشتی پياده‌سازی</p>
+<p>کنید</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>جستجو کنید و بخوانید</p>
+<p><img alt="" src="../images/chapter2/image75.png" />به عنوان مطالعه جنبی همیشه توصیه می شود در
+مورد موضوعات جدید سرچ کنید، مثلا چند صفحه ویکی پدیا در مورد آنها
+بخوانید، یا چند مطلب از اینترنت جستجو کنید و ببینید. مثلا در مورد کلمات
+زیر بخوانید:</p>
+<ul>
+<li>
+<p>Java Bitwise Operators</p>
+</li>
+<li>
+<p>ببینید چه عملگرهایی برای انجام عملیات بیتی در جاوا وجود دارد.</p>
+</li>
+<li>
+<p>IDE</p>
+<ul>
+<li>
+<p>Eclipse</p>
+</li>
+<li>
+<p>IntelliJ IDEA</p>
+</li>
+<li>
+<p>NetBeans</p>
+</li>
+</ul>
+</li>
+<li>
+<p>GOTO statement</p>
+</li>
+</ul>
+<p>همچنین پیشنهاد می کنیم که هر زمان به خطایی برخوردید آن را نیز در
+اینترنت جستجو کنید. حتما کسانی هستند که تا کنون به این مشکل برخوردند و
+آن را در اینترنت مطرح کردند و کسانی هم هستند که به آن پرسش ها جواب داده
+اند و با جستجو در اینترنت خیلی از وقت ها به پاسخ مورد نظر خود خواهید
+رسید.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01-intro-to-java/" title="01- آشنایی با جاوا" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  قبلی
+                </span>
+                01- آشنایی با جاوا
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03-string-array/part1/" title="رشته، آرایه و چند داستان دیگر" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  بعدی
+                </span>
+                رشته، آرایه و چند داستان دیگر
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
